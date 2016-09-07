@@ -28,7 +28,8 @@ Plugin 'vim-scripts/Conque-GDB'
 Plugin 'Tagbar'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'mattn/emmet-vim'
-"Plugin 'jslint.vim'
+Plugin 'hsnks100/VimExplorer'
+ "Plugin 'jslint.vim'
 call vundle#end()            " required
 filetype plugin indent on    " required
 
@@ -81,7 +82,7 @@ endif
 
 
 " Fugitive config
-nnoremap <leader>gc :Gcommit %<CR>
+nnoremap <leader>gc :Gcommit % -m "update"<CR>
 "git add %
 nnoremap <leader>gw :Gwrite<CR>
 nnoremap <leader>gp :Git push origin master<CR>

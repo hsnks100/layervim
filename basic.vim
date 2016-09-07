@@ -60,6 +60,7 @@ vnoremap <C-C> :"+y<CR>
 inoremap <C-V> <ESC>"+p<CR>i 
 nnoremap <SPACE>fed :e ~/.vimrc<CR>
 nnoremap <SPACE>feR :source ~/.vimrc<CR>
+nnoremap <leader>d :b#<bar>bd#<CR>
 
 "compile setting
 autocmd FileType cpp setlocal makeprg=g++\ -g\ -std=c++11\ %:r.cpp\ -o\ %<.exe
@@ -79,4 +80,10 @@ if bufwinnr(1)
   map <kDivide> <c-w><
   map <kMultiply> <c-w>>
 endif
-set scrolloff=10
+set scrolloff=10 
+
+
+" swp 파일들 한쪽으로 모으기.
+set backupdir=~/vimrc/backup_files//
+set directory=~/vimrc/swap_files//
+set undodir=~/vimrc/undo_files//
