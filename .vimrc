@@ -95,15 +95,15 @@ let g:netrw_liststyle = 3
 "nnoremap S :set noimd<CR>S
 
 " Syntastic config
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_cpp_compiler = 'g++'
-let g:syntastic_cpp_compiler_options = ' -std=gnu++11 -stdlib=libc++'
+"set statusline+=%#warningmsg#
+"set statusline+=%{SyntasticStatuslineFlag()}
+"set statusline+=%*
+"let g:syntastic_always_populate_loc_list = 1
+"let g:syntastic_auto_loc_list = 1
+"let g:syntastic_check_on_open = 1
+"let g:syntastic_check_on_wq = 0
+"let g:syntastic_cpp_compiler = 'g++'
+"let g:syntastic_cpp_compiler_options = ' -std=gnu++11 -stdlib=libc++'
 
 if has('gui_running')
     set background=light
