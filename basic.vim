@@ -7,9 +7,9 @@ function! KSOO()
     set encoding=utf-8
 
     if has("win32")
-        set guifont=D2Coding:h14
+        set guifont=D2Coding:h18
     else
-        set guifont=NanumGothicCoding\ Bold\ 14
+        set guifont=NanumGothicCoding\ Bold\ 18
     endif
     set number            " line Ç¥½Ã¸¦ ÇØÁÝ´Ï´Ù.
     set laststatus=2                                      
@@ -41,9 +41,9 @@ function! KSOO()
     set hidden
     set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
     set et 
-    set ts=4
-    set sw=4
-    set sts=4 
+    set ts=2
+    set sw=2
+    set sts=2 
     set ai 
     set nocursorline
     set noesckeys

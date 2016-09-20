@@ -93,7 +93,7 @@ let g:syntastic_cpp_compiler_options = '-std=c++11'
 
 
 " Fugitive config
-execute "nnoremap <leader>gc :Gcommit % -m \"".expand("%:n")."\"<CR>"
+execute "nnoremap <leader>gc :!git commit % -m \"".expand("%:n")."\"<CR>"
 "git add %
 nnoremap <leader>gw :Gwrite<CR>
 nnoremap <leader>gp :Git push<CR>
