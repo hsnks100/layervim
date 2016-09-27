@@ -52,6 +52,7 @@ function! KSOO()
     endif
     let g:mapleader=","
     colorscheme darkblue
+    set t_Co=256
 
     nmap <C-j> :bn<CR>
     nmap <C-k> :bp<CR>
@@ -88,6 +89,9 @@ function! KSOO()
             let b:buildstr = "python ".expand("%")."
         elseif l:ext == "r"
             let b:buildstr = "Rscript ".expand("%")
+        elseif l:ext == "pl"
+            let b:buildstr = "perl ".expand("%") ."< input.txt"
+
         endif
 
         if executable('tmux')
@@ -177,3 +181,4 @@ function! KSOO()
 endfunction
 
 call KSOO()
+

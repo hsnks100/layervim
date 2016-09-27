@@ -57,6 +57,11 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#fnamemod = ':t'
 let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
+let g:airline_theme='cool'
+
+"set AirlineTheme=cool
+"call AirlineTheme(cool)
+
 
 nmap _ :call NERDComment(0, "toggle")<CR>
 vmap _ :call NERDComment("x", "toggle")<CR>
