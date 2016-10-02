@@ -11,6 +11,8 @@ function! KSOO()
   else
     set guifont=NanumGothicCoding\ Bold\ 18
   endif
+  set guioptions-=m
+  set guioptions-=T
   set number            " line Ç¥½Ã¸¦ ÇØÁÝ´Ï´Ù.
   set laststatus=2                                      
   set cmdheight=2                                       
@@ -141,8 +143,8 @@ function! KSOO()
     "inoremap <F9> <ESC>:call Run()<CR> 
   else 
     noremap <F6> :cexpr system('./'.expand('%:r') .'< input.txt')<CR>:cope<CR><C-w>p
-    noremap <C-S-B> :wa<CR>:silent call Kompile()<CR><c-w>p
-    autocmd FileType cpp noremap <buffer> <F5> :silent call Exekute()<CR><c-w>p
+    noremap <C-S-B> :wa<CR>:call Kompile()<CR><c-w>p
+    autocmd FileType cpp noremap <buffer> <F5> :call Exekute()<CR><c-w>p
   endif
 
   autocmd BufNewFile,BufRead * setlocal formatoptions-=cro
