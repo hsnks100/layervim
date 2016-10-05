@@ -188,6 +188,7 @@ function! KSOO()
     "set term="term-256color"
     "set term=screen-256color
   endif 
+  inoremap <ESC> <ESC>:silent !fcitx-remote -s fcitx-keyboard-us<CR>:redraw!<CR>
 endfunction
 
 call KSOO()
