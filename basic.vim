@@ -9,7 +9,7 @@ function! KSOO()
   if has("win32")
     set guifont=D2Coding:h18
   else
-    set guifont=NanumGothicCoding\ Bold\ 18
+    set guifont=NanumGothicCoding\ Bold\ 12
   endif
   set guioptions-=m
   set guioptions-=T
@@ -62,7 +62,7 @@ function! KSOO()
   inoremap <C-l> <C-o>l
   imap jj <ESC>j
   imap kk <ESC>k
-  nmap <SPACE> i<SPACE><ESC>l
+  nmap <S-SPACE> i<SPACE><ESC>l
   nmap <S-CR> i<CR><ESC>
   vnoremap p "_dP=`]`]
   nnoremap x "_x
@@ -87,7 +87,7 @@ function! KSOO()
     let l:ext = expand("%:e")
     echo "call kompile"
     if l:ext == "cpp" 
-      let b:buildstr = "g++ -std=c++11 ".expand("%")." -o ".expand("%<")
+      let b:buildstr = "g++ -std=c++11 -O2 ".expand("%")." -o ".expand("%<")
     elseif  l:ext == "py"
       let b:buildstr = "python ".expand("%")
     elseif l:ext == "r"
@@ -189,6 +189,16 @@ function! KSOO()
     "set term=screen-256color
   endif 
   inoremap <ESC> <ESC>:silent !fcitx-remote -s fcitx-keyboard-us<CR>:redraw!<CR>
+
+
+  " reference to recursive parent path
+  let l:parent=1
+  let l:local_tags = "tags"
+  while l:parent <= 8
+    exe ":set tags+=".local_tags
+      let l:local_tags = "../". l:local_tags
+    let l:parent = l:parent+1
+  endwhile
 endfunction
 
 call KSOO()
