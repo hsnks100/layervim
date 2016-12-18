@@ -87,13 +87,15 @@ function! KSOO()
     let l:ext = expand("%:e")
     echo "call kompile"
     if l:ext == "cpp" 
-      let b:buildstr = "g++ -std=c++11 -O2 ".expand("%")." -o ".expand("%<")
+      let b:buildstr = "g++ -std=c++11 -O2 ".expand("%:p")." -o ".expand("%<")
     elseif  l:ext == "py"
-      let b:buildstr = "python ".expand("%")
+      let b:buildstr = "python ".expand("%:p")
     elseif l:ext == "r"
-      let b:buildstr = "Rscript ".expand("%")
+      let b:buildstr = "Rscript ".expand("%:p")
     elseif l:ext == "pl"
-      let b:buildstr = "perl ".expand("%")
+      let b:buildstr = "perl ".expand("%:p")
+    elseif l:ext == "m"
+      let b:buildstr = "octave -qf ".expand("%:p")
     endif
 
     if filereadable("input.txt")

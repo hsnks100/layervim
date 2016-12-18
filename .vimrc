@@ -13,7 +13,6 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'vimplugin/project.vim'
 Plugin 'lenny0702/vim-sftp-sync-inPython'
 Plugin 'mihaifm/bufstop'
-Plugin 'easymotion/vim-easymotion'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/syntastic'
 Plugin 'tmhedberg/matchit'
@@ -24,8 +23,8 @@ Plugin 'wookiehangover/jshint.vim'
 Plugin 'a.vim'
 "Plugin 'taglist-plus'
 Plugin 'scrooloose/nerdtree'
-Plugin 'vim-scripts/Conque-GDB'
-"Plugin 'Tagbar'
+"Plugin 'vim-scripts/Conque-GDB'
+Plugin 'Tagbar'
 Plugin 'altercation/vim-colors-solarized' 
 Plugin 'mattn/emmet-vim'
 Plugin 'hsnks100/VimExplorer'
@@ -33,6 +32,18 @@ Plugin 'benmills/vimux'
 Plugin 'jszakmeister/vim-togglecursor'
 Plugin 'tpope/vim-surround'
 Plugin 'changyuheng/color-scheme-holokai-for-vim'
+Plugin 'tpope/vim-repeat' 
+Plugin 'airblade/vim-gitgutter'
+
+Plugin 'jelera/vim-javascript-syntax'
+Plugin 'luochen1990/rainbow'
+
+Plugin 'easymotion/vim-easymotion'
+
+
+let g:rainbow_active = 1 "0 if you want to enable it later via :RainbowToggle
+"Plugin 'Enhanced-Javascript-syntax'
+
 
  "Plugin 'jslint.vim'
 call vundle#end()            " required
@@ -91,7 +102,7 @@ set statusline+=%*
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_w = 1
+let g:syntastic_check_on_w = 0
 let g:syntastic_check_on_wq = 0
 let g:syntastic_cpp_compiler = 'g++'
 let g:syntastic_cpp_compiler_options = '-std=c++11'
@@ -110,3 +121,21 @@ let g:user_emmet_leader_key='<C-Z>'
 
  
 
+" easymotion
+" <Leader>f{char} to move to {char}
+let g:EasyMotion_do_mapping = 0 " Disable default mappings
+
+" Jump to anywhere you want with minimal keystrokes, with just one key binding.
+" `s{char}{label}`
+nmap f <Plug>(easymotion-bd-wl)
+" or
+" `s{char}{char}{label}`
+" Need one more keystroke, but on average, it may be more comfortable.
+"nmap s <Plug>(easymotion-overwin-f2)
+
+" Turn on case insensitive feature
+let g:EasyMotion_smartcase = 1
+
+" JK motions: Line motions
+"map <Leader>j <Plug>(easymotion-j)
+"map <Leader>k <Plug>(easymotion-k)
