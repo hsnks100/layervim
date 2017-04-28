@@ -160,9 +160,9 @@ function! KSOO()
 
 
   " swp 파일들 한쪽으로 모으기.
-  set backupdir=~/kimrc/backup_files//
-  set directory=~/kimrc/swap_files//
-  set undodir=~/kimrc/undo_files//
+  set backupdir=~/vimrc/backup_files//
+  set directory=~/vimrc/swap_files//
+  set undodir=~/vimrc/undo_files//
   set scrolloff=10
 
 
