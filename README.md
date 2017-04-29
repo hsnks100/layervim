@@ -16,6 +16,7 @@ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
 ## step1
 ```
+cd ~/ or cd %USERPROFILE%
 git clone https://github.com/hsnks100/vimrc.git
 ```
 
