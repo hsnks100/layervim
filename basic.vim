@@ -41,7 +41,7 @@ function! KSOO()
   set autochdir
   set noerrorbells visualbell t_vb=
   set hidden
-  set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
+  set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<,space:#
   set et 
   set ts=2
   set sw=2
@@ -149,7 +149,7 @@ function! KSOO()
     autocmd FileType cpp noremap <buffer> <F5> :call Exekute()<CR><c-w>p
   endif
 
-  autocmd BufNewFile,BufRead * setlocal formatoptions-=cro
+  autocmd BufNewFile,BufRead * set formatoptions=tcq
   if bufwinnr(1)
     map <kPlus> <C-W>+
     map <kMinus> <C-W>-

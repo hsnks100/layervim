@@ -33,12 +33,15 @@ Plugin 'jszakmeister/vim-togglecursor'
 Plugin 'tpope/vim-surround'
 Plugin 'changyuheng/color-scheme-holokai-for-vim'
 Plugin 'tpope/vim-repeat' 
-Plugin 'airblade/vim-gitgutter'
-
+Plugin 'airblade/vim-gitgutter' 
 Plugin 'jelera/vim-javascript-syntax'
-Plugin 'luochen1990/rainbow'
+Plugin 'luochen1990/rainbow' 
+Plugin 'easymotion/vim-easymotion' 
+Plugin 'hsanson/vim-android' 
+Plugin 'grep.vim'
 
-Plugin 'easymotion/vim-easymotion'
+
+
 
 
 let g:rainbow_active = 1 "0 if you want to enable it later via :RainbowToggle
@@ -109,7 +112,7 @@ let g:syntastic_cpp_compiler_options = '-std=c++11'
 
 
 " Fugitive config
-execute "nnoremap <leader>gc :!git commit % -m \"".expand("%:n")."\"<CR>"
+execute "nnoremap <leader>gc :!git commit % -m \"empty".expand("%:n")."\"<CR>"
 "git add %
 nnoremap <leader>gw :Gwrite<CR>
 nnoremap <leader>gp :Git push<CR>
@@ -139,3 +142,7 @@ let g:EasyMotion_smartcase = 1
 " JK motions: Line motions
 "map <Leader>j <Plug>(easymotion-j)
 "map <Leader>k <Plug>(easymotion-k)
+
+
+
+
