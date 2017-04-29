@@ -9,3 +9,6 @@ vim config file
     <li>test</li>
     <li>test</li>
 </ul>
+
+set rtp+=~/vimrc
+source ~/vimrc/.vimrc 
