@@ -1,55 +1,62 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
-let g:JSHintUpdateWriteOnly = 1
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'tpope/vim-fugitive'
-Plugin 'L9'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
- Plugin 'ctrlp.vim'
-Plugin 'vimplugin/project.vim'
-Plugin 'lenny0702/vim-sftp-sync-inPython'
-Plugin 'mihaifm/bufstop'
-Plugin 'scrooloose/nerdcommenter'
-Plugin 'scrooloose/syntastic'
-Plugin 'tmhedberg/matchit'
-Plugin 'LargeFile'
-Plugin 'jade.vim'
-Plugin 'AutoComplPop'
-Plugin 'wookiehangover/jshint.vim'
-Plugin 'a.vim'
-"Plugin 'taglist-plus'
-Plugin 'scrooloose/nerdtree'
-"Plugin 'vim-scripts/Conque-GDB'
-Plugin 'Tagbar'
-Plugin 'altercation/vim-colors-solarized' 
-Plugin 'mattn/emmet-vim'
-Plugin 'hsnks100/VimExplorer'
-Plugin 'benmills/vimux'
-Plugin 'jszakmeister/vim-togglecursor'
-Plugin 'tpope/vim-surround'
-Plugin 'changyuheng/color-scheme-holokai-for-vim'
-Plugin 'tpope/vim-repeat' 
-Plugin 'airblade/vim-gitgutter' 
-Plugin 'jelera/vim-javascript-syntax'
-Plugin 'luochen1990/rainbow' 
-Plugin 'easymotion/vim-easymotion' 
-Plugin 'hsanson/vim-android' 
-Plugin 'grep.vim'
+call plug#begin('~/.vim/plugged')
+Plug 'VundleVim/Vundle.vim'
+Plug 'tpope/vim-fugitive'
+Plug 'vim-scripts/L9'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'vim-scripts/ctrlp.vim'
+Plug 'vimplugin/project.vim'
+Plug 'lenny0702/vim-sftp-sync-inPython'
+Plug 'mihaifm/bufstop'
+Plug 'scrooloose/nerdcommenter'
+Plug 'scrooloose/syntastic'
+Plug 'tmhedberg/matchit'
+Plug 'vim-scripts/LargeFile'
+Plug 'vim-scripts/jade.vim'
+Plug 'vim-scripts/AutoComplPop'
+Plug 'wookiehangover/jshint.vim'
+Plug 'vim-scripts/a.vim'
+"Plug 'taglist-plus'
+Plug 'scrooloose/nerdtree'
+"Plug 'vim-scripts/Conque-GDB'
+Plug 'vim-scripts/Tagbar'
+Plug 'altercation/vim-colors-solarized' 
+Plug 'mattn/emmet-vim'
+Plug 'hsnks100/VimExplorer'
+Plug 'benmills/vimux'
+Plug 'jszakmeister/vim-togglecursor'
+Plug 'tpope/vim-surround'
+Plug 'changyuheng/color-scheme-holokai-for-vim'
+Plug 'tpope/vim-repeat' 
+Plug 'airblade/vim-gitgutter' 
+Plug 'jelera/vim-javascript-syntax'
+Plug 'luochen1990/rainbow' 
+Plug 'easymotion/vim-easymotion' 
+Plug 'hsanson/vim-android' 
+Plug 'vim-scripts/grep.vim'
+Plug 'leafgarland/typescript-vim'
 
+Plug 'rakr/vim-one'
+
+
+call plug#end()
+
+
+
+
+filetype plugin indent on    " required
 
 
 
 
 let g:rainbow_active = 1 "0 if you want to enable it later via :RainbowToggle
-"Plugin 'Enhanced-Javascript-syntax'
+"Plug 'Enhanced-Javascript-syntax'
 
 
- "Plugin 'jslint.vim'
-call vundle#end()            " required
+ "Plug 'jslint.vim'
 filetype plugin indent on    " required
 runtime basic.vim
 let g:ctrlp_custom_ignore = {
@@ -137,12 +144,10 @@ nmap f <Plug>(easymotion-bd-wl)
 "nmap s <Plug>(easymotion-overwin-f2)
 
 " Turn on case insensitive feature
-let g:EasyMotion_smartcase = 1
+let g:EasyMotion_smartcase = 1 
 
 " JK motions: Line motions
 "map <Leader>j <Plug>(easymotion-j)
-"map <Leader>k <Plug>(easymotion-k)
-
-
+"map <Leader>k <Plug>(easymotion-k) 
 
 

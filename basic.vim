@@ -3,13 +3,14 @@ function! KSOO()
   syntax on
 
   "language en_US.UTF-8
-  set fileencoding=utf-8
+  set fileencodings=utf-8,euc-kr
   set encoding=utf-8
+
 
   if has("win32")
     set guifont=D2Coding:h18
   else
-    set guifont=NanumGothicCoding\ Bold\ 12
+    set guifont=나눔고딕코딩\ bold\ 14
   endif
   set guioptions-=m
   set guioptions-=T
@@ -102,30 +103,20 @@ function! KSOO()
       let b:buildstr .= " < input.txt"
     endif
 
-    if executable('tmux') && !has('gui')
-      call VimuxRunCommand("cd ".expand("%:p:h"))
-      call VimuxRunCommand(b:buildstr) 
-    else
-      let b:buildstr = substitute(b:buildstr, " ", "\\\\ ", "g")
-      echo b:buildstr
-      silent execute "setlocal makeprg=".b:buildstr
-      make
-      vertical botright copen
-    endif
+    let b:buildstr = substitute(b:buildstr, " ", "\\\\ ", "g")
+    echo "build command : " . b:buildstr
+    silent execute "setlocal makeprg=".b:buildstr
+    make
+    vertical botright copen
   endfunction
 
 
   function! Exekute()
-    if executable("tmux") && !has('gui')
-      call VimuxRunCommand(expand("%:p:r") . " <input.txt")
-    else
-      " noremap <F6> :cexpr system('./'.expand('%:r') .'< input.txt')<CR>:cope<CR><C-w>p
-      execute "cexpr system(\"" . expand('%:p:r') . " <input.txt\")"
-      normal <CR>
-      vertical botright copen
-      "execute("vertical botright cope")
-      "  <CR>:cop<CR><C-w>p"
-    endif
+    execute "cexpr system(\"" . expand('%:p:r') . " <input.txt\")"
+    normal <CR>
+    vertical botright copen
+    "execute("vertical botright cope")
+    "  <CR>:cop<CR><C-w>p"
   endfunction
 
 
@@ -190,7 +181,6 @@ function! KSOO()
     "set term="term-256color"
     "set term=screen-256color
   endif 
-  inoremap <ESC> <ESC>:silent !fcitx-remote -s fcitx-keyboard-us<CR>:redraw!<CR>
 
 
   " reference to recursive parent path
