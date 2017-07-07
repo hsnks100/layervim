@@ -4,7 +4,7 @@
 This LayerVim is Vim Configuration.
 
 # Installation
-Installation requires Git and triggers git clone for each configured repository to ~/.vim/bundle/ by default. unless you have git, you must install git. 
+You must install git. 
 
 
 # Vim Plug Requirement
