@@ -6,6 +6,11 @@ function! KSOO()
   set fileencodings=utf-8,euc-kr
   set encoding=utf-8
 
+  set langmenu=en_US
+  let $LANG = 'en_US'
+  source $VIMRUNTIME/delmenu.vim
+  source $VIMRUNTIME/menu.vim
+
 
   if has("win32")
     set guifont=D2Coding:h18
@@ -34,7 +39,9 @@ function! KSOO()
   set bs=indent,eol,start 
   set history=1000   
   set ruler         
-  set nobackup     
+  set noswapfile
+  set nobackup
+  set nowritebackup 
   set title       
   set showmatch  
   set nowrap    
@@ -44,9 +51,9 @@ function! KSOO()
   set hidden
   set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<,space:#
   set et 
-  set ts=2
-  set sw=2
-  set sts=2 
+  set ts=4
+  set sw=4
+  set sts=4 
   set ai 
   set nocursorline
   set noesckeys
@@ -54,7 +61,9 @@ function! KSOO()
     autocmd GUIEnter * set visualbell t_vb=
   endif
   let g:mapleader=","
-  colorscheme darkblue
+  colorscheme one 
+  set background=dark
+
   set t_Co=256
 
   nmap <C-j> :bn<CR>
@@ -174,13 +183,6 @@ function! KSOO()
 
 
 
-  if has('gui_running')
-    set background=light
-    colorscheme darkblue
-  else
-    "set term="term-256color"
-    "set term=screen-256color
-  endif 
 
 
   " reference to recursive parent path

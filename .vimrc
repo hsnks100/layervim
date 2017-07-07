@@ -56,9 +56,6 @@ let g:rainbow_active = 1 "0 if you want to enable it later via :RainbowToggle
 "Plug 'Enhanced-Javascript-syntax'
 
 
- "Plug 'jslint.vim'
-filetype plugin indent on    " required
-runtime basic.vim
 let g:ctrlp_custom_ignore = {
   \ 'dir':  '\v[\/](\.(git|hg|svn)|\_site)$',
   \ 'file': '\v\.(exe|so|dll|class|png|jpg|jpeg)$',
@@ -78,7 +75,7 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#fnamemod = ':t'
 let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
-let g:airline_theme='cool'
+let g:airline_theme='base16_default'
 
 "set AirlineTheme=cool
 "call AirlineTheme(cool)
@@ -150,4 +147,6 @@ let g:EasyMotion_smartcase = 1
 "map <Leader>j <Plug>(easymotion-j)
 "map <Leader>k <Plug>(easymotion-k) 
 
+
+runtime basic.vim
 
