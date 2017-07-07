@@ -1,6 +1,7 @@
-# my vimrc configration
-![image](https://cloud.githubusercontent.com/assets/3623889/25554361/6eef0350-2d06-11e7-89ad-ab645dfaf0e3.png)
+#my vimrc configration
+![image](https://user-images.githubusercontent.com/3623889/27951348-8c151f4a-633f-11e7-9fa3-659149c3ce00.png)
 
+This LayerVim is Vim Configuration.
 
 # Installation
 Installation requires Git and triggers git clone for each configured repository to ~/.vim/bundle/ by default. unless you have git, you must install git. 
