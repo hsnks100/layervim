@@ -1,4 +1,4 @@
-#my vimrc configration
+# my vimrc configration
 ![image](https://user-images.githubusercontent.com/3623889/27951348-8c151f4a-633f-11e7-9fa3-659149c3ce00.png)
 
 This LayerVim is Vim Configuration.
