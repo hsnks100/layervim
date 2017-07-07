@@ -6,19 +6,20 @@
 Installation requires Git and triggers git clone for each configured repository to ~/.vim/bundle/ by default. unless you have git, you must install git. 
 
 
+# Vim Plug Requirement
+
+https://github.com/junegunn/vim-Plug 
 
 
 # windows
 ```
 cd %USERPROFILE%
-git clone https://github.com/VundleVim/Vundle.vim.git %USERPROFILE%/.vim/bundle/Vundle.vim
 git clone https://github.com/hsnks100/vimrc.git
 ```
 
 # linux
 ```
 cd ~/
-git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 git clone https://github.com/hsnks100/vimrc.git
 ```
 
@@ -35,7 +36,7 @@ source ~/vimrc/.vimrc
 
 
 # step2
-execute vim, type ':BundleInstall[enter]'
+execute vim, type ':PlugInstall[enter]'
 
 
 
