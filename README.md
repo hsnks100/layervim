@@ -37,13 +37,13 @@ https://github.com/junegunn/vim-Plug
 # windows
 ```
 cd %USERPROFILE%
-git clone https://github.com/hsnks100/vimrc.git
+git clone https://github.com/hsnks100/layervim.git
 ```
 
 # linux
 ```
 cd ~/
-git clone https://github.com/hsnks100/vimrc.git
+git clone https://github.com/hsnks100/layervim.git
 ```
 
 # step1
@@ -52,8 +52,8 @@ create ~/.vimrc
 put this at the top of your ~/.vimrc
 
 ``` 
-set rtp+=~/vimrc  
-source ~/vimrc/.vimrc 
+set rtp+=~/layervim  
+source ~/layervim/layer.vim
 ```
 
 
