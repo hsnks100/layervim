@@ -60,7 +60,7 @@ function! KSOO()
   if has('autocmd')
     autocmd GUIEnter * set visualbell t_vb=
   endif
-  let g:mapleader=","
+  let g:mapleader=" "
   colorscheme one 
   set background=dark
 
@@ -68,8 +68,6 @@ function! KSOO()
 
   nmap <C-j> :bn<CR>
   nmap <C-k> :bp<CR>
-  inoremap <C-h> <C-o>h
-  inoremap <C-l> <C-o>l
   imap jj <ESC>j
   imap kk <ESC>k
   nmap <S-SPACE> i<SPACE><ESC>l
@@ -83,9 +81,11 @@ function! KSOO()
   vnoremap <C-C> :"+y<CR>
   inoremap <C-V> <ESC>"+pa
   vnoremap <C-V> s<ESC>"+p 
-  nnoremap <SPACE>fed :e ~/.vimrc<CR>
-  nnoremap <SPACE>feR :source ~/.vimrc<CR>
+  nnoremap <leader>fed :e ~/.vimrc<CR>
+  nnoremap <leader>feR :source ~/.vimrc<CR>
   nnoremap <leader>d :b#<bar>bd#<CR>
+  nnoremap [ <C-U>
+  nnoremap ] <C-D>
 
   "compile setting
 
@@ -144,7 +144,6 @@ function! KSOO()
     "noremap <F9> :call Run()<CR>
     "inoremap <F9> <ESC>:call Run()<CR> 
   else 
-    noremap <F6> :cexpr system('./'.expand('%:r') .'< input.txt')<CR>:cope<CR><C-w>p
     noremap <C-S-B> :wa<CR>:call Kompile()<CR><c-w>p
     autocmd FileType cpp noremap <buffer> <F5> :call Exekute()<CR><c-w>p
   endif

@@ -39,17 +39,6 @@ let g:netrw_silent = 1
 let g:netrw_split = 2
 let g:netrw_liststyle = 3 
 
-"
-"inoremap <ESC> <ESC>:set imdisable<CR>
-"nnoremap i :set noimd<CR>i
-"nnoremap I :set noimd<CR>I
-"nnoremap a :set noimd<CR>a
-"nnoremap A :set noimd<CR>A
-"nnoremap o :set noimd<CR>o
-"nnoremap O :set noimd<CR>O
-"nnoremap s :set noimd<CR>s
-"nnoremap S :set noimd<CR>S
-
 " Syntastic config
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
@@ -64,11 +53,12 @@ let g:syntastic_cpp_compiler_options = '-std=c++11'
 
 
 " Fugitive config
-execute "nnoremap <leader>gc :!git commit % -m \"empty".expand("%:n")."\"<CR>"
+"execute "nnoremap <leader>gc :!git commit % -m \"empty".expand("%:n")."\"<CR>"
 "git add %
 nnoremap <leader>gw :Gwrite<CR>
 nnoremap <leader>gp :Git push<CR>
 nnoremap <leader>gb :Gblame<CR>
+nnoremap <leader>gc :Gcommit<CR>
 
 "emmet config 
 let g:user_emmet_leader_key='<C-Z>'
