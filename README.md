@@ -11,6 +11,28 @@ You must install git.
 
 https://github.com/junegunn/vim-Plug 
 
+# LayerVim Structure
+
+```
+▸ backup_files/
+▾ layers/
+  ▾ etc/ -- category1
+      config.vim
+      packages.vim
+      README.md
+  ▾ syntax/ -- category2
+      config.vim
+      packages.vim
+  ▾ ui/ -- category3
+      config.vim
+      packages.vim
+▸ swap_files/
+▸ undo_files/
+  basic.vim -- basic configration
+  layer.vim -- core logic
+
+```
+
 
 # windows
 ```
