@@ -1,7 +1,5 @@
 scriptencoding utf-8
 
-let g:rainbow_active = 1 "0 if you want to enable it later via :RainbowToggle
-"Plug 'Enhanced-Javascript-syntax'
 
 
 let g:ctrlp_custom_ignore = {
@@ -17,13 +15,6 @@ set laststatus=2
 "endif
 
 
-" airline symbols
-let g:airline_powerline_fonts = 1
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#fnamemod = ':t'
-let g:airline#extensions#tabline#left_sep = ' '
-let g:airline#extensions#tabline#left_alt_sep = '|'
-let g:airline_theme='base16_default'
 
 "set AirlineTheme=cool
 "call AirlineTheme(cool)
@@ -39,17 +30,6 @@ let g:netrw_silent = 1
 let g:netrw_split = 2
 let g:netrw_liststyle = 3 
 
-" Syntastic config
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_w = 0
-let g:syntastic_check_on_wq = 0
-let g:syntastic_cpp_compiler = 'g++'
-let g:syntastic_cpp_compiler_options = '-std=c++11'
 
 
 " Fugitive config
@@ -86,5 +66,4 @@ let g:EasyMotion_smartcase = 1
 "map <Leader>k <Plug>(easymotion-k) 
 
 
-runtime basic.vim
 
