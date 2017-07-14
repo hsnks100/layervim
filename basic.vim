@@ -86,6 +86,7 @@ function! KSOO()
   nnoremap <leader>d :b#<bar>bd#<CR>
   nnoremap [ <C-U>
   nnoremap ] <C-D>
+  nnoremap <leader>sv :source $MYVIMRC<cr>
 
   "compile setting
 
@@ -192,7 +193,19 @@ function! KSOO()
       let l:local_tags = "../". l:local_tags
     let l:parent = l:parent+1
   endwhile
+
+
+  augroup filetype_vim
+      autocmd!
+      autocmd BufWritePost *.vimrc,*.vim source $MYVIMRC
+  augroup END 
+
+  augroup myindent
+      au!
+      au BufEnter *.c normal gg=G
+  augroup END
 endfunction
 
 call KSOO()
+
 
