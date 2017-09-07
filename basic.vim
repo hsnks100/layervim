@@ -1,7 +1,6 @@
 function! KSOO()
 
-  syntax on
-
+  syntax on 
   "language en_US.UTF-8
   set fileencodings=utf-8,euc-kr
   set encoding=utf-8
@@ -197,7 +196,7 @@ function! KSOO()
 
   augroup filetype_vim
       autocmd!
-      autocmd BufWritePost *.vimrc,*.vim source $MYVIMRC
+      "autocmd BufWritePost *.vimrc,*.vim source $MYVIMRC
   augroup END 
 
   augroup myindent

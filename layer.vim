@@ -1,5 +1,6 @@
 " ksoo function
 
+
 let g:layervim_dir = $HOME.'/layervim' 
 let g:layervim_layers_dir = '/layers'
 let g:layervim_private_layers_dir = '/private'
@@ -7,8 +8,6 @@ let g:layervim_excluded = []
 let g:layervim_plugins = []
 let g:plug_options = {}
 let g:layers_sum = 0
-
-
 
 function! layer#update() abort
 let s:py_exe = has('python') ? 'python' : 'python3' 

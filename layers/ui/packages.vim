@@ -4,5 +4,6 @@ Plug 'vim-scripts/Tagbar'
 Plug 'altercation/vim-colors-solarized' 
 Plug 'rakr/vim-one' 
 Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+Plug 'vim-airline/vim-airline-themes' 
+Plug 'fholgado/minibufexpl.vim'
 
