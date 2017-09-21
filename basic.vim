@@ -14,7 +14,7 @@ function! KSOO()
   if has("win32")
     set guifont=D2Coding:h18
   else
-    set guifont=나눔고딕코딩\ bold\ 14
+    set guifont=NanumGothicCoding\ 14
   endif
   set guioptions-=m
   set guioptions-=T
@@ -86,6 +86,10 @@ function! KSOO()
   nnoremap [ <C-U>
   nnoremap ] <C-D>
   nnoremap <leader>sv :source $MYVIMRC<cr>
+  nnoremap <C-h> <C-W>h
+  nnoremap <C-j> <C-W>j
+  nnoremap <C-k> <C-W>k
+  nnoremap <C-l> <C-W>l
 
   "compile setting
 
