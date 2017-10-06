@@ -68,3 +68,5 @@ let g:EasyMotion_smartcase = 1
 
 
 
+
+command! A :call FSwitch('%', '')
