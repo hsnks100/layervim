@@ -60,8 +60,14 @@ function! KSOO()
     autocmd GUIEnter * set visualbell t_vb=
   endif
   let g:mapleader=" "
-  colorscheme one 
-  set background=dark
+  if has("gui_running")
+      colorscheme darkblue
+      set background=dark
+  else
+      set background=light
+      colorscheme pablo
+
+  endif
 
   set t_Co=256
 
@@ -77,7 +83,7 @@ function! KSOO()
   inoremap <C-y> <C-x><C-y>
   noremap YY :%y+<CR> 
   vnoremap Y "+y
-  vnoremap <C-C> :"+y<CR>
+  vnoremap <C-C> "+y<CR>
   inoremap <C-V> <ESC>"+pa
   vnoremap <C-V> s<ESC>"+p 
   nnoremap <leader>fed :e ~/.vimrc<CR>
@@ -87,8 +93,6 @@ function! KSOO()
   nnoremap ] <C-D>
   nnoremap <leader>sv :source $MYVIMRC<cr>
   nnoremap <C-h> <C-W>h
-  nnoremap <C-j> <C-W>j
-  nnoremap <C-k> <C-W>k
   nnoremap <C-l> <C-W>l
 
   "compile setting
@@ -187,6 +191,7 @@ function! KSOO()
 
 
 
+  set tags=~/tags
 
   " reference to recursive parent path
   let l:parent=1

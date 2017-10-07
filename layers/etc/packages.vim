@@ -22,6 +22,8 @@ Plug 'easymotion/vim-easymotion'
 Plug 'hsanson/vim-android' 
 Plug 'vim-scripts/grep.vim' 
 Plug 'anekos/felis-cat-igirisu-toast-express' 
+Plug 'derekwyatt/vim-fswitch'
+
 "Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 
 
