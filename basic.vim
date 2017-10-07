@@ -14,7 +14,7 @@ function! KSOO()
   if has("win32")
     set guifont=D2Coding:h18
   else
-    set guifont=NanumGothicCoding\ 14
+    set guifont=NanumGothicCoding\ Bold\ 14
   endif
   set guioptions-=m
   set guioptions-=T
