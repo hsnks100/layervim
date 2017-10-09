@@ -83,7 +83,7 @@ function! KSOO()
   inoremap <C-y> <C-x><C-y>
   noremap YY :%y+<CR> 
   vnoremap Y "+y
-  vnoremap <C-C> "+y<CR>
+  vnoremap <C-C> "+y
   inoremap <C-V> <ESC>"+pa
   vnoremap <C-V> s<ESC>"+p 
   nnoremap <leader>fed :e ~/.vimrc<CR>
@@ -94,6 +94,8 @@ function! KSOO()
   nnoremap <leader>sv :source $MYVIMRC<cr>
   nnoremap <C-h> <C-W>h
   nnoremap <C-l> <C-W>l
+  nnoremap gr :vimgrep /<C-R><C-W>/ **<CR>:copen<CR>
+  vnoremap gr "gy:vimgrep /<C-R>g/ **
 
   "compile setting
 
@@ -208,10 +210,10 @@ function! KSOO()
       "autocmd BufWritePost *.vimrc,*.vim source $MYVIMRC
   augroup END 
 
-  augroup myindent
-      au!
-      au BufEnter *.c normal gg=G
-  augroup END
+  "augroup myindent
+      "au!
+      "au BufEnter *.c normal gg=G
+  "augroup END
 endfunction
 
 call KSOO()
