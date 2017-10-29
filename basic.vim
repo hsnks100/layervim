@@ -77,7 +77,7 @@ function! KSOO()
   imap kk <ESC>k
   nmap <S-SPACE> i<SPACE><ESC>l
   nmap <S-CR> i<CR><ESC>
-  vnoremap p "_dP=`]`]
+  vnoremap p "_dP
   nnoremap x "_x
   inoremap <C-e> <C-x><C-e>
   inoremap <C-y> <C-x><C-y>
@@ -91,6 +91,9 @@ function! KSOO()
   nnoremap <leader>d :b#<bar>bd#<CR>
   nnoremap [ <C-U>
   nnoremap ] <C-D>
+  vnoremap [ <C-U>
+  vnoremap ] <C-D>
+
   nnoremap <leader>sv :source $MYVIMRC<cr>
   nnoremap <C-h> <C-W>h
   nnoremap <C-l> <C-W>l
