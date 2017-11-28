@@ -56,6 +56,13 @@ function! KSOO()
   set ai 
   set nocursorline
   set noesckeys
+  set wrap lbr
+  noremap  <silent> k gk
+  noremap  <silent> j gj
+  noremap  <silent> 0 g0
+  noremap  <silent> $ g$
+
+
   if has('autocmd')
     autocmd GUIEnter * set visualbell t_vb=
   endif
@@ -99,6 +106,10 @@ function! KSOO()
   nnoremap <C-l> <C-W>l
   nnoremap gr :vimgrep /<C-R><C-W>/ **<CR>:copen<CR>
   vnoremap gr "gy:vimgrep /<C-R>g/ **
+  nnoremap <Down> <C-w>j
+  nnoremap <Up> <C-w>k
+  nnoremap <Left> <C-w>h
+  nnoremap <Right> <C-w>l
 
   "compile setting
 
@@ -197,6 +208,7 @@ function! KSOO()
 
 
   set tags=~/tags
+  set tags+=/usr/include/tags
 
   " reference to recursive parent path
   let l:parent=1
@@ -222,3 +234,9 @@ endfunction
 call KSOO()
 
 
+
+function! g:BsdToKnR()
+    while(search("^\\s*{") > 0) 
+        execute "normal! /^\\s*{/\<CR>kJ" 
+    endwhile 
+endfunction
