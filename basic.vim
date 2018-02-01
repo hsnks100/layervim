@@ -14,7 +14,7 @@ function! KSOO()
   if has("win32")
     set guifont=D2Coding:h18
   else
-    set guifont=NanumGothicCoding\ Bold\ 14
+    set guifont=NanumGothicCoding\ Bold\ 12
   endif
   set guioptions-=m
   set guioptions-=T
@@ -50,6 +50,7 @@ function! KSOO()
   set hidden
   set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<,space:#
   set et 
+
   set ts=4
   set sw=4
   set sts=4 
@@ -77,6 +78,7 @@ function! KSOO()
   endif
 
   set t_Co=256
+  set cindent cino=j1,(0,ws,Ws
 
   nmap <C-j> :bn<CR>
   nmap <C-k> :bp<CR>
@@ -217,7 +219,22 @@ function! KSOO()
     exe ":set tags+=".local_tags
       let l:local_tags = "../". l:local_tags
     let l:parent = l:parent+1
+
   endwhile
+
+  function! LoadCscope()
+      let db = findfile("cscope.out", ".;")
+      if (!empty(db))
+          let path = strpart(db, 0, match(db, "/cscope.out$"))
+          set nocscopeverbose " suppress 'duplicate connection' error
+          exe "cs add " . db . " " . path
+          set cscopeverbose
+          " else add the database pointed to by environment variable 
+      elseif $CSCOPE_DB != "" 
+          cs add $CSCOPE_DB
+      endif
+  endfunction
+  au BufEnter /* call LoadCscope()
 
 
   augroup filetype_vim
