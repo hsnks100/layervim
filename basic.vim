@@ -14,7 +14,9 @@ function! KSOO()
   if has("win32")
     set guifont=D2Coding:h18
   else
-    set guifont=NanumGothicCoding\ Bold\ 12
+    "set guifont=NanumGothicCoding\ Bold\ 12
+    set guifont=Fixedsys\ Excelsior\ 3.01\ 12
+
   endif
   set guioptions-=m
   set guioptions-=T
@@ -108,10 +110,18 @@ function! KSOO()
   nnoremap <C-l> <C-W>l
   nnoremap gr :vimgrep /<C-R><C-W>/ **<CR>:copen<CR>
   vnoremap gr "gy:vimgrep /<C-R>g/ **
-  nnoremap <Down> <C-w>j
-  nnoremap <Up> <C-w>k
-  nnoremap <Left> <C-w>h
-  nnoremap <Right> <C-w>l
+  "nnoremap <Down> <C-w>j
+  "nnoremap <Up> <C-w>k
+  nnoremap <C-Left> <C-w><
+  nnoremap <C-Right> <C-w>>
+  nnoremap <C-Down> <C-w>-
+  nnoremap <C-Up> <C-w>+
+  nnoremap <Left> <C-w><
+  nnoremap <Right> <C-w>>
+  nnoremap <Down> <C-w>-
+  nnoremap <Up> <C-w>+
+  cnoremap <C-h> <Left>
+  cnoremap <C-l> <Right>
 
   "compile setting
 
@@ -170,7 +180,7 @@ function! KSOO()
     "noremap <F9> :call Run()<CR>
     "inoremap <F9> <ESC>:call Run()<CR> 
   else 
-    noremap <C-S-B> :wa<CR>:call Kompile()<CR><c-w>p
+    noremap <C-S-B> :wa<CR>:!./build<CR>
     autocmd FileType cpp noremap <buffer> <F5> :call Exekute()<CR><c-w>p
   endif
 
