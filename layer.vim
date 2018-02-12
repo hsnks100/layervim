@@ -58,7 +58,7 @@ function! s:load_packages()
     " Load Layer packages
     for l:layer in keys(g:layer_path)
         let l:layer_packages = g:layer_path[l:layer] . '/packages.vim'
-        echo l:layer_packages
+        "echo l:layer_packages
         call s:Source(l:layer_packages)
     endfor 
 endfunction

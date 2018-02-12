@@ -14,7 +14,9 @@ function! KSOO()
   if has("win32")
     set guifont=D2Coding:h18
   else
-    set guifont=NanumGothicCoding\ Bold\ 14
+    "set guifont=NanumGothicCoding\ Bold\ 12
+    set guifont=Fixedsys\ Excelsior\ 3.01\ 12
+
   endif
   set guioptions-=m
   set guioptions-=T
@@ -50,12 +52,20 @@ function! KSOO()
   set hidden
   set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<,space:#
   set et 
+
   set ts=4
   set sw=4
   set sts=4 
   set ai 
   set nocursorline
   set noesckeys
+  set wrap lbr
+  noremap  <silent> k gk
+  noremap  <silent> j gj
+  noremap  <silent> 0 g0
+  noremap  <silent> $ g$
+
+
   if has('autocmd')
     autocmd GUIEnter * set visualbell t_vb=
   endif
@@ -70,6 +80,7 @@ function! KSOO()
   endif
 
   set t_Co=256
+  set cindent cino=j1,(0,ws,Ws
 
   nmap <C-j> :bn<CR>
   nmap <C-k> :bp<CR>
@@ -77,13 +88,13 @@ function! KSOO()
   imap kk <ESC>k
   nmap <S-SPACE> i<SPACE><ESC>l
   nmap <S-CR> i<CR><ESC>
-  vnoremap p "_dP=`]`]
+  vnoremap p "_dP
   nnoremap x "_x
   inoremap <C-e> <C-x><C-e>
   inoremap <C-y> <C-x><C-y>
   noremap YY :%y+<CR> 
   vnoremap Y "+y
-  vnoremap <C-C> "+y<CR>
+  vnoremap <C-C> "+y
   inoremap <C-V> <ESC>"+pa
   vnoremap <C-V> s<ESC>"+p 
   nnoremap <leader>fed :e ~/.vimrc<CR>
@@ -91,9 +102,26 @@ function! KSOO()
   nnoremap <leader>d :b#<bar>bd#<CR>
   nnoremap [ <C-U>
   nnoremap ] <C-D>
+  vnoremap [ <C-U>
+  vnoremap ] <C-D>
+
   nnoremap <leader>sv :source $MYVIMRC<cr>
   nnoremap <C-h> <C-W>h
   nnoremap <C-l> <C-W>l
+  nnoremap gr :vimgrep /<C-R><C-W>/ **<CR>:copen<CR>
+  vnoremap gr "gy:vimgrep /<C-R>g/ **
+  "nnoremap <Down> <C-w>j
+  "nnoremap <Up> <C-w>k
+  nnoremap <C-Left> <C-w><
+  nnoremap <C-Right> <C-w>>
+  nnoremap <C-Down> <C-w>-
+  nnoremap <C-Up> <C-w>+
+  nnoremap <Left> <C-w><
+  nnoremap <Right> <C-w>>
+  nnoremap <Down> <C-w>-
+  nnoremap <Up> <C-w>+
+  cnoremap <C-h> <Left>
+  cnoremap <C-l> <Right>
 
   "compile setting
 
@@ -152,7 +180,7 @@ function! KSOO()
     "noremap <F9> :call Run()<CR>
     "inoremap <F9> <ESC>:call Run()<CR> 
   else 
-    noremap <C-S-B> :wa<CR>:call Kompile()<CR><c-w>p
+    noremap <C-S-B> :wa<CR>:!./build<CR>
     autocmd FileType cpp noremap <buffer> <F5> :call Exekute()<CR><c-w>p
   endif
 
@@ -192,6 +220,7 @@ function! KSOO()
 
 
   set tags=~/tags
+  set tags+=/usr/include/tags
 
   " reference to recursive parent path
   let l:parent=1
@@ -200,7 +229,22 @@ function! KSOO()
     exe ":set tags+=".local_tags
       let l:local_tags = "../". l:local_tags
     let l:parent = l:parent+1
+
   endwhile
+
+  function! LoadCscope()
+      let db = findfile("cscope.out", ".;")
+      if (!empty(db))
+          let path = strpart(db, 0, match(db, "/cscope.out$"))
+          set nocscopeverbose " suppress 'duplicate connection' error
+          exe "cs add " . db . " " . path
+          set cscopeverbose
+          " else add the database pointed to by environment variable 
+      elseif $CSCOPE_DB != "" 
+          cs add $CSCOPE_DB
+      endif
+  endfunction
+  au BufEnter /* call LoadCscope()
 
 
   augroup filetype_vim
@@ -208,12 +252,18 @@ function! KSOO()
       "autocmd BufWritePost *.vimrc,*.vim source $MYVIMRC
   augroup END 
 
-  augroup myindent
-      au!
-      au BufEnter *.c normal gg=G
-  augroup END
+  "augroup myindent
+      "au!
+      "au BufEnter *.c normal gg=G
+  "augroup END
 endfunction
 
 call KSOO()
 
 
+
+function! g:BsdToKnR()
+    while(search("^\\s*{") > 0) 
+        execute "normal! /^\\s*{/\<CR>kJ" 
+    endwhile 
+endfunction
