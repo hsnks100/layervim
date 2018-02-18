@@ -9,3 +9,6 @@ Plug 'fholgado/minibufexpl.vim'
 Plug 'airblade/vim-gitgutter' 
 Plug 'jlanzarotta/bufexplorer'
 Plug 'wincent/command-t'
+
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'

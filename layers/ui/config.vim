@@ -20,3 +20,6 @@ let g:miniBufExplModSelTarget = 1
 let g:gitgutter_map_keys = 0
 
 
+
+"<plug>(fzf-complete-path)
+nmap <leader><tab> <plug>(fzf-complete-path)
