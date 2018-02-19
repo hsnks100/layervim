@@ -106,12 +106,12 @@ function! KSOO()
   vnoremap ] <C-D>
 
   nnoremap <leader>sv :source $MYVIMRC<cr>
-  nnoremap <C-h> <C-W>h
-  nnoremap <C-l> <C-W>l
   nnoremap gr :vimgrep /<C-R><C-W>/ **<CR>:copen<CR>
   vnoremap gr "gy:vimgrep /<C-R>g/ **
   "nnoremap <Down> <C-w>j
   "nnoremap <Up> <C-w>k
+  nnoremap <C-h> <C-W>h
+  nnoremap <C-l> <C-W>l
   nnoremap <C-Left> <C-w><
   nnoremap <C-Right> <C-w>>
   nnoremap <C-Down> <C-w>-
@@ -237,6 +237,7 @@ function! KSOO()
       if (!empty(db))
           let path = strpart(db, 0, match(db, "/cscope.out$"))
           set nocscopeverbose " suppress 'duplicate connection' error
+          exe "cs kill -1"
           exe "cs add " . db . " " . path
           set cscopeverbose
           " else add the database pointed to by environment variable 
@@ -244,7 +245,23 @@ function! KSOO()
           cs add $CSCOPE_DB
       endif
   endfunction
-  au BufEnter /* call LoadCscope()
+  au BufRead /* call LoadCscope()
+  set csprg=/usr/bin/cscope 
+  set csto=0 
+  set cst 
+  set nocsverb 
+  set csverb
+
+  nnoremap <F12> :!rm cscope.out cscope.files<CR>:!find `pwd` -iname '*.c' -o -iname '*.cpp' -o -iname '*.h' -o -iname '*.hpp' > cscope.files<CR>:!cscope -b -C -i  cscope.files -f cscope.out<CR>:cs kill -1<CR>:cs add cscope.out<CR>
+  nnoremap <CR>s :cs find s <C-R>=expand("<cword>")<CR><CR>    
+  nnoremap <CR>g :cs find g <C-R>=expand("<cword>")<CR><CR>    
+  nnoremap <CR>c :cs find c <C-R>=expand("<cword>")<CR><CR>    
+  nnoremap <CR>t :cs find t <C-R>=expand("<cword>")<CR><CR>    
+  nnoremap <CR>e :cs find e <C-R>=expand("<cword>")<CR><CR>    
+  nnoremap <CR>f :cs find f <C-R>=expand("<cfile>")<CR><CR>    
+  nnoremap <CR>i :cs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
+  nnoremap <CR>d :cs find d <C-R>=expand("<cword>")<CR><CR>
+  nnoremap <CR>g :cs find g <C-R>=expand("<cword>")<CR><CR>
 
 
   augroup filetype_vim

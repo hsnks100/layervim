@@ -11,4 +11,5 @@ Plug 'jlanzarotta/bufexplorer'
 Plug 'wincent/command-t'
 
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'
+Plug 'junegunn/fzf.vim' 
+Plug 'lornix/vim-scrollbar'
