@@ -54,6 +54,8 @@ let g:EasyMotion_do_mapping = 0 " Disable default mappings
 " Jump to anywhere you want with minimal keystrokes, with just one key binding.
 " `s{char}{label}`
 nmap f <Plug>(easymotion-bd-wl)
+
+nmap F <Plug>(easymotion-bd-jk)
 " or
 " `s{char}{char}{label}`
 " Need one more keystroke, but on average, it may be more comfortable.
@@ -71,3 +73,5 @@ let g:EasyMotion_smartcase = 1
 command! A :call FSwitch('%', '') 
 "set clipboard=unnamed
 
+
+nnoremap gr :Grep <C-R><C-W> *

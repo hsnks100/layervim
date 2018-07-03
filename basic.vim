@@ -10,7 +10,7 @@ function! KSOO()
     source $VIMRUNTIME/delmenu.vim
     source $VIMRUNTIME/menu.vim
 
-    set guifont=Inconsolata\ Bold\ 12
+    set guifont=Inconsolata\ Bold\ 14
 
     set guioptions-=m
     set guioptions-=T
@@ -59,7 +59,7 @@ function! KSOO()
     set wrap lbr
     noremap  <silent> k gk
     noremap  <silent> j gj
-    noremap  <silent> 0 g0
+    noremap  <silent> 0 g^
     noremap  <silent> $ g$
 
 
@@ -67,16 +67,7 @@ function! KSOO()
         autocmd GUIEnter * set visualbell t_vb=
     endif
     let g:mapleader=" "
-    "if has("gui_running")
-    "colorscheme darkblue
-    "set background=dark
-    "else
-    "set background=light
-    "colorscheme pablo
-
-
-    "endif
-    colorscheme darkblue
+    colorscheme atom
 
     set t_Co=256
     set cindent cino=j1,(0,ws,Ws
@@ -87,6 +78,7 @@ function! KSOO()
     imap kk <ESC>k
     imap ,. <ESC>
     cmap ,. <ESC>
+
     nmap <S-SPACE> i<SPACE><ESC>l
     nmap <S-CR> i<CR><ESC>
     vnoremap p "_dP
@@ -96,7 +88,12 @@ function! KSOO()
     noremap YY :%y+<CR> 
     vnoremap Y "+y
     vnoremap <C-C> "+y
-    "inoremap <C-V> <ESC>"+pa
+    nnoremap <C-V> "+P
+    inoremap <C-V> <ESC>"+pa
+
+    nnoremap <S-Insert> "+P
+    inoremap <S-Insert> <ESC>"+pa
+
 
     vnoremap <C-V> s<ESC>"+p 
     nnoremap <leader>fed :e ~/layervim/basic.vim<CR>
@@ -136,64 +133,31 @@ function! KSOO()
     endif
 
     "compile setting
-
+    if filereadable('/proc/cpuinfo')
+        let &makeprg = 'make -j'.(system('grep -c ^processor /proc/cpuinfo')+1)
+    endif
 
     "function! Builder()
     "endfunction
-    function! Kompile() 
-        let b:buildstr = ""
-        let l:ext = expand("%:e")
-        echo "call kompile"
-        if l:ext == "cpp" 
-            let b:buildstr = "g++ -std=c++11 -O2 ".expand("%:p")." -o ".expand("%<")
-        elseif  l:ext == "py"
-            let b:buildstr = "python ".expand("%:p")
-        elseif l:ext == "r"
-            let b:buildstr = "Rscript ".expand("%:p")
-        elseif l:ext == "pl"
-            let b:buildstr = "perl ".expand("%:p")
-        elseif l:ext == "m"
-            let b:buildstr = "octave -qf ".expand("%:p")
+    command! -bang -nargs=? QFix call QFixToggle(<bang>0)
+    function! QFixToggle(forced)
+        if exists("g:qfix_win") && a:forced == 0
+            cclose
+            unlet g:qfix_win
+        else
+            copen 10
+            let g:qfix_win = bufnr("$")
         endif
-
-        if filereadable("input.txt")
-            let b:buildstr .= " < input.txt"
-        endif
-
-        let b:buildstr = substitute(b:buildstr, " ", "\\\\ ", "g")
-        echo "build command : " . b:buildstr
-        silent execute "setlocal makeprg=".b:buildstr
-        make
-        vertical botright copen
     endfunction
 
+    nmap <silent> \` :QFix<CR>
 
-    function! Exekute()
-        execute "cexpr system(\"" . expand('%:p:r') . " <input.txt\")"
-        normal <CR>
-        vertical botright copen
-        "execute("vertical botright cope")
-        "  <CR>:cop<CR><C-w>p"
-    endfunction
+
 
 
     if has("win32")
-        autocmd FileType cpp setlocal makeprg=g++\ -g\ -std=gnu++11\ %:r.cpp\ -o\ %<.exe
-        autocmd FileType pl,perl setlocal makeprg=perl\ %\ <input.txt
-        autocmd FileType py,python setlocal makeprg=python\ %
-        noremap <C-S-B> :wa<CR>:make<CR>:cope<CR><C-w>p
-        "autocmd FileType cpp noremap <buffer> <C-F5> :cexpr system('./'.expand('%:r') .'.exe< input.txt')<CR>:cope<CR><C-w>p
-        autocmd FileType cpp noremap <buffer> <C-F5> :cexpr system(expand('%:r') ." <input.txt")<CR>:cope<CR><C-w>p
-        autocmd FileType cpp noremap <buffer> <C-F6> :cexpr system(expand('%:r'))<CR>:cope<CR><C-w>p
-        autocmd FileType cpp noremap <buffer> <F5> :!gdb %<.exe input.txt<CR>:cope<CR><C-w>p
-
-        "noremap <F5> :wa<CR>:make<CR>
-        "noremap <C-F5> :! %<.exe < input.txt<CR>
-        "autocmd FileType cpp set makeprg=g++\ -std=c++11\ %:r.cpp\ -o\ %<.exe
-        "noremap <F9> :call Run()<CR>
-        "inoremap <F9> <ESC>:call Run()<CR> 
     else 
-        nnoremap <C-S-B> :wa<CR>:make<CR>
+        nnoremap <C-S-B> :wa<CR>:silent make\|redraw!\|cc<CR>
     endif
 
     autocmd BufNewFile,BufRead * set formatoptions=tcq
@@ -255,10 +219,10 @@ function! KSOO()
         endif
 
         silent cs add ~/hisdk/mpp/include/cscope.out
-        silent cs add ~/hisdk/mpp/sample/common/cscope.out
+        silent cs add ~/hisdk/mpp/sample/cscope.out
         set cscopeverbose
     endfunction
-    au BufRead /* call LoadCscope()
+    au BufEnter /* call LoadCscope()
 
     set csprg=/usr/bin/cscope 
     set csto=0 
@@ -267,15 +231,15 @@ function! KSOO()
     set csverb
 
     nnoremap <F12> :!rm cscope.out cscope.files<CR>:!find `pwd` -iname '*.c' -o -iname '*.cpp' -o -iname '*.h' -o -iname '*.hpp' > cscope.files<CR>:!cscope -b -C -i  cscope.files -f cscope.out<CR>:cs kill -1<CR>:cs add cscope.out<CR>
-    nnoremap <CR>s :cs find s <C-R>=expand("<cword>")<CR><CR>    
-    nnoremap <CR>g :cs find g <C-R>=expand("<cword>")<CR><CR>    
-    nnoremap <CR>c :cs find c <C-R>=expand("<cword>")<CR><CR>    
-    nnoremap <CR>t :cs find t <C-R>=expand("<cword>")<CR><CR>    
-    nnoremap <CR>e :cs find e <C-R>=expand("<cword>")<CR><CR>    
-    nnoremap <CR>f :cs find f <C-R>=expand("<cfile>")<CR><CR>    
-    nnoremap <CR>i :cs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
-    nnoremap <CR>d :cs find d <C-R>=expand("<cword>")<CR><CR>
-    nnoremap <CR>g :cs find g <C-R>=expand("<cword>")<CR><CR>
+    nnoremap \s :cs find s <C-R>=expand("<cword>")<CR><CR>    
+    nnoremap \g :cs find g <C-R>=expand("<cword>")<CR><CR>    
+    nnoremap \c :cs find c <C-R>=expand("<cword>")<CR><CR>    
+    nnoremap \t :cs find t <C-R>=expand("<cword>")<CR><CR>    
+    nnoremap \e :cs find e <C-R>=expand("<cword>")<CR><CR>    
+    nnoremap \f :cs find f <C-R>=expand("<cfile>")<CR><CR>    
+    nnoremap \i :cs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
+    nnoremap \d :cs find d <C-R>=expand("<cword>")<CR><CR>
+    nnoremap \g :cs find g <C-R>=expand("<cword>")<CR><CR>
 
 
 

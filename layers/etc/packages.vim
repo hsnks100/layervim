@@ -21,6 +21,7 @@ Plug 'anekos/felis-cat-igirisu-toast-express'
 Plug 'derekwyatt/vim-fswitch'
 
 Plug 'tpope/vim-repeat' 
+Plug 'reinh/vim-makegreen'
 
 
 "Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }

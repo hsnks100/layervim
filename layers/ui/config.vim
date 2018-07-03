@@ -11,6 +11,8 @@ let g:airline_theme='base16_default'
 
 
 map <F2> :NERDTree<CR> 
+
+nmap <F6> :BufExplorer<CR>
 let g:miniBufExplMapWindowNavVim = 1 
 let g:miniBufExplMapWindowNavArrows = 1 
 let g:miniBufExplMapCTabSwitchBufs = 1 
@@ -23,3 +25,6 @@ let g:gitgutter_map_keys = 0
 
 "<plug>(fzf-complete-path)
 nmap <leader><tab> <plug>(fzf-complete-path)
+
+
+let g:goyo_width = 200
