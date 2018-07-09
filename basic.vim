@@ -150,10 +150,7 @@ function! KSOO()
         endif
     endfunction
 
-    nmap <silent> \` :QFix<CR>
-
-
-
+    nmap <silent> \` :QFix<CR> 
 
     if has("win32")
     else 

@@ -11,3 +11,4 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim' 
 Plug 'junegunn/goyo.vim'
 Plug 'rafi/awesome-vim-colorschemes'
+Plug 'terryma/vim-smooth-scroll'
