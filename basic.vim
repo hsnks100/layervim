@@ -66,14 +66,15 @@ function! KSOO()
     if has('autocmd')
         autocmd GUIEnter * set visualbell t_vb=
     endif
-    let g:mapleader=" "
-    colorscheme atom
+    let g:mapleader="\\"
 
     set t_Co=256
     set cindent cino=j1,(0,ws,Ws
 
-    nmap <C-j> :bn<CR>
-    nmap <C-k> :bp<CR>
+    "nmap <C-j> :bn<CR>
+    "nmap <C-k> :bp<CR>
+    "nnoremap <Leader>b :bp<CR>
+    "nnoremap <Leader>f :bn<CR>
     imap jj <ESC>j
     imap kk <ESC>k
     imap ,. <ESC>
@@ -83,6 +84,7 @@ function! KSOO()
     nmap <S-CR> i<CR><ESC>
     vnoremap p "_dP
     nnoremap x "_x
+    nnoremap ciw "_ciw
     inoremap <C-e> <C-x><C-e>
     inoremap <C-y> <C-x><C-y>
     noremap YY :%y+<CR> 
@@ -99,10 +101,6 @@ function! KSOO()
     nnoremap <leader>fed :e ~/layervim/basic.vim<CR>
     nnoremap <leader>feR :source ~/.vimrc<CR>
     nnoremap <leader>d :b#<bar>bd#<CR>
-    nnoremap [ <C-U>
-    nnoremap ] <C-D>
-    vnoremap [ <C-U>
-    vnoremap ] <C-D>
     "unmap ]%
     "unmap [%
 
@@ -113,6 +111,14 @@ function! KSOO()
     "nnoremap <Up> <C-w>k
     nnoremap <C-h> <C-W>h
     nnoremap <C-l> <C-W>l
+    nnoremap <C-j> :bn<CR> 
+    nnoremap <C-k> :bp<CR> 
+    nnoremap [ <C-U>
+    nnoremap ] <C-D>
+    vnoremap [ <C-U>
+    vnoremap ] <C-D>
+
+
     nnoremap <C-Left> <C-w><
     nnoremap <C-Right> <C-w>>
     nnoremap <C-Down> <C-w>-
@@ -154,7 +160,8 @@ function! KSOO()
 
     if has("win32")
     else 
-        nnoremap <C-S-B> :wa<CR>:silent make\|redraw!\|cc<CR>
+        "nnoremap <C-S-B> :wa<CR>:silent make\|redraw!\|cc<CR>
+        nnoremap <C-S-B> :wa<CR>:Make<CR>
     endif
 
     autocmd BufNewFile,BufRead * set formatoptions=tcq
@@ -174,11 +181,18 @@ function! KSOO()
 
 
 
-    if has("gui")
+    if has("gui_running")
         noremap <M-Space> :simalt ~<CR>
         inoremap <M-Space> <C-O>:simalt ~<CR>
         cnoremap <M-Space> <C-C>:simalt ~<CR>
+        colorscheme atom
+    else 
+        let g:airline_theme='one'
+        set background=dark
+        colorscheme molokai
+        "exec "normal! silent :RainbowToggleOff"
     endif
+
 
     if has("win32")
         runtime delmenu.vim
@@ -191,18 +205,18 @@ function! KSOO()
 
 
 
-    set tags=~/tags
-    set tags+=/usr/include/tags
+    "set tags=~/tags
+    "set tags+=/usr/include/tags
 
-    " reference to recursive parent path
-    let l:parent=1
-    let l:local_tags = "tags"
-    while l:parent <= 8
-        exe ":set tags+=".local_tags
-        let l:local_tags = "../". l:local_tags
-        let l:parent = l:parent+1
+    "" reference to recursive parent path
+    "let l:parent=1
+    "let l:local_tags = "tags"
+    "while l:parent <= 8
+        "exe ":set tags+=".local_tags
+        "let l:local_tags = "../". l:local_tags
+        "let l:parent = l:parent+1
 
-    endwhile
+    "endwhile
 
     function! LoadCscope()
         let db = findfile("cscope.out", ".;")
@@ -227,16 +241,16 @@ function! KSOO()
     set nocsverb 
     set csverb
 
-    nnoremap <F12> :!rm cscope.out cscope.files<CR>:!find `pwd` -iname '*.c' -o -iname '*.cpp' -o -iname '*.h' -o -iname '*.hpp' > cscope.files<CR>:!cscope -b -C -i  cscope.files -f cscope.out<CR>:cs kill -1<CR>:cs add cscope.out<CR>
-    nnoremap \s :cs find s <C-R>=expand("<cword>")<CR><CR>    
-    nnoremap \g :cs find g <C-R>=expand("<cword>")<CR><CR>    
-    nnoremap \c :cs find c <C-R>=expand("<cword>")<CR><CR>    
-    nnoremap \t :cs find t <C-R>=expand("<cword>")<CR><CR>    
-    nnoremap \e :cs find e <C-R>=expand("<cword>")<CR><CR>    
-    nnoremap \f :cs find f <C-R>=expand("<cfile>")<CR><CR>    
-    nnoremap \i :cs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
-    nnoremap \d :cs find d <C-R>=expand("<cword>")<CR><CR>
-    nnoremap \g :cs find g <C-R>=expand("<cword>")<CR><CR>
+    "nnoremap <F12> :!rm cscope.out cscope.files<CR>:!find `pwd` -iname '*.c' -o -iname '*.cpp' -o -iname '*.h' -o -iname '*.hpp' > cscope.files<CR>:!cscope -b -C -i  cscope.files -f cscope.out<CR>:cs kill -1<CR>:cs add cscope.out<CR>
+    nnoremap <leader>s :cs find s <C-R>=expand("<cword>")<CR><CR>    
+    nnoremap <leader>g :cs find g <C-R>=expand("<cword>")<CR><CR>    
+    nnoremap <leader>c :cs find c <C-R>=expand("<cword>")<CR><CR>    
+    nnoremap <leader>t :cs find t <C-R>=expand("<cword>")<CR><CR>    
+    nnoremap <leader>e :cs find e <C-R>=expand("<cword>")<CR><CR>    
+    nnoremap <leader>f :cs find f <C-R>=expand("<cfile>")<CR><CR>    
+    nnoremap <leader>i :cs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
+    nnoremap <leader>d :cs find d <C-R>=expand("<cword>")<CR><CR>
+    nnoremap <leader>g :cs find g <C-R>=expand("<cword>")<CR><CR>
 
 
 

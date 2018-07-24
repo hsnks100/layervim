@@ -95,8 +95,8 @@ call layer#update()
 call s:load_packages() 
 call s:invoke_plug() 
 call plug#end()
-
 runtime basic.vim 
+
 call s:load_config()
 
 
