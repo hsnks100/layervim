@@ -75,3 +75,16 @@ command! A :call FSwitch('%', '')
 
 
 nnoremap gr :Grep <C-R><C-W> *
+
+
+
+
+command! -bang -nargs=* -complete=file Make AsyncRun -program=make
+
+let g:DoxygenToolkit_briefTag_pre="@Brief  "
+let g:DoxygenToolkit_paramTag_pre="@Param "
+let g:DoxygenToolkit_returnTag="@Returns   "
+let g:DoxygenToolkit_blockHeader="--------------------------------------------------------------------------"
+let g:DoxygenToolkit_blockFooter="----------------------------------------------------------------------------"
+let g:DoxygenToolkit_authorName="Han Gyoung-Su"
+let g:DoxygenToolkit_licenseTag="My own license"

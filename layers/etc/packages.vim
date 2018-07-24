@@ -22,6 +22,8 @@ Plug 'derekwyatt/vim-fswitch'
 
 Plug 'tpope/vim-repeat' 
 Plug 'reinh/vim-makegreen'
+Plug 'skywind3000/asyncrun.vim'
+Plug 'vim-scripts/DoxygenToolkit.vim'
 
 
 "Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
