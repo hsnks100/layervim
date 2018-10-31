@@ -32,14 +32,6 @@ let g:netrw_liststyle = 3
 
 
 
-" Fugitive config
-"execute "nnoremap <leader>gc :!git commit % -m \"empty".expand("%:n")."\"<CR>"
-"git add %
-nnoremap <leader>gw :Gwrite<CR>
-nnoremap <leader>gp :Git push<CR>
-nnoremap <leader>gb :Gblame<CR>
-nnoremap <leader>gc :Gcommit<CR>
-nnoremap <leader>gs :Gstatus<CR> 
 "emmet config 
 let g:user_emmet_leader_key='<C-Z>'
 " ??
@@ -53,8 +45,7 @@ let g:EasyMotion_do_mapping = 0 " Disable default mappings
 
 " Jump to anywhere you want with minimal keystrokes, with just one key binding.
 " `s{char}{label}`
-nmap f <Plug>(easymotion-bd-wl)
-
+nmap f <Plug>(easymotion-bd-wl) 
 nmap F <Plug>(easymotion-bd-jk)
 " or
 " `s{char}{char}{label}`
@@ -67,8 +58,6 @@ let g:EasyMotion_smartcase = 1
 " JK motions: Line motions
 "map <Leader>j <Plug>(easymotion-j)
 "map <Leader>k <Plug>(easymotion-k) 
-
-
 
 command! A :call FSwitch('%', '') 
 "set clipboard=unnamed

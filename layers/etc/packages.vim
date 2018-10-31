@@ -1,4 +1,3 @@
-Plug 'tpope/vim-fugitive'
 Plug 'jreybert/vimagit'
 Plug 'vim-scripts/L9'
 Plug 'vimplugin/project.vim'
@@ -21,9 +20,15 @@ Plug 'anekos/felis-cat-igirisu-toast-express'
 Plug 'derekwyatt/vim-fswitch'
 
 Plug 'tpope/vim-repeat' 
+"Plug 'edkolev/vim-amake'
 Plug 'reinh/vim-makegreen'
 Plug 'skywind3000/asyncrun.vim'
 Plug 'vim-scripts/DoxygenToolkit.vim'
+" Track the engine.
+Plug 'SirVer/ultisnips'
+
+" Snippets are separated from the engine. Add this if you want them:
+Plug 'honza/vim-snippets'
 
 
 "Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }

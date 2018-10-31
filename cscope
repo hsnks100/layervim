@@ -1,0 +1,6 @@
+#!/bin/sh
+cur=$(dirname $(realpath $0))
+rm ${cur}/cscope.files ${cur}/cscope.out
+find ${cur} -iname '*.c' -o -iname '*.cpp' > ${cur}/cscope.files
+cscope -b -i ${cur}/cscope.files -f ${cur}/cscope.out
+

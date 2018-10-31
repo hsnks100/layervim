@@ -66,7 +66,8 @@ function! KSOO()
     if has('autocmd')
         autocmd GUIEnter * set visualbell t_vb=
     endif
-    let g:mapleader="\\"
+    "let g:mapleader="\\"
+    let g:mapleader=","
 
     set t_Co=256
     set cindent cino=j1,(0,ws,Ws
@@ -140,7 +141,7 @@ function! KSOO()
 
     "compile setting
     if filereadable('/proc/cpuinfo')
-        let &makeprg = 'make -j'.(system('grep -c ^processor /proc/cpuinfo')+1)
+        let &makeprg = 'make -j'.(system('grep -c ^processor /proc/cpuinfo')/2)
     endif
 
     "function! Builder()
@@ -249,7 +250,7 @@ function! KSOO()
     nnoremap <leader>e :cs find e <C-R>=expand("<cword>")<CR><CR>    
     nnoremap <leader>f :cs find f <C-R>=expand("<cfile>")<CR><CR>    
     nnoremap <leader>i :cs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
-    nnoremap <leader>d :cs find d <C-R>=expand("<cword>")<CR><CR>
+    "nnoremap <leader>d :cs find d <C-R>=expand("<cword>")<CR><CR>
     nnoremap <leader>g :cs find g <C-R>=expand("<cword>")<CR><CR>
 
 

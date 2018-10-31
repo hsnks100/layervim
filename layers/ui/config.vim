@@ -32,3 +32,4 @@ let g:goyo_width = 200
 
 nnoremap <silent> <c-u> :call smooth_scroll#up(&scroll, 0, 1)<CR>
 nnoremap <silent> <c-d> :call smooth_scroll#down(&scroll, 0, 1)<CR>
+
