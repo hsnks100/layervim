@@ -54,27 +54,18 @@ https://github.com/junegunn/vim-Plug
 ```
 cd %USERPROFILE%
 git clone https://github.com/hsnks100/layervim.git
-```
 
-# linux
-```
-cd ~/
-git clone https://github.com/hsnks100/layervim.git
-```
-
-# step1
-
-create ~/.vimrc  
-put this at the top of your ~/.vimrc
-
-``` 
+append follow text to your vimrc
 set rtp+=~/layervim  
 source ~/layervim/layer.vim
 ```
 
+# linux
+```
+curl -s -L https://raw.githubusercontent.com/hsnks100/layervim/master/install-script.sh | bash
+```
 
-
-# step2
+# final step
 execute vim, type ':PlugInstall[enter]'
 
 
