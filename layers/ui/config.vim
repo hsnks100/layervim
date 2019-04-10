@@ -12,7 +12,7 @@ let g:airline_theme='base16_default'
 
 map <F2> :NERDTree<CR> 
 
-nmap <F6> :BufExplorer<CR>
+nmap <leader>w :BufExplorer<CR>
 let g:miniBufExplMapWindowNavVim = 1 
 let g:miniBufExplMapWindowNavArrows = 1 
 let g:miniBufExplMapCTabSwitchBufs = 1 
@@ -30,6 +30,4 @@ nmap <leader><tab> <plug>(fzf-complete-path)
 let g:goyo_width = 200
 
 
-nnoremap <silent> <c-u> :call smooth_scroll#up(&scroll, 0, 1)<CR>
-nnoremap <silent> <c-d> :call smooth_scroll#down(&scroll, 0, 1)<CR>
 

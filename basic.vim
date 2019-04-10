@@ -61,13 +61,21 @@ function! KSOO()
     noremap  <silent> j gj
     noremap  <silent> 0 g^
     noremap  <silent> $ g$
+    if has('nvim')
+        tnoremap <A-h> <C-\><C-n><C-w>h
+        tnoremap <A-j> <C-\><C-n><C-w>j
+        tnoremap <A-k> <C-\><C-n><C-w>k
+        tnoremap <A-l> <C-\><C-n><C-w>l
+        nnoremap <F12> :bel sp 50 <Bar> resize 10 <Bar> terminal
+        "nnoremap <F3> :bel sp 50 | resize 10 | terminal
+    endif
 
 
     if has('autocmd')
         autocmd GUIEnter * set visualbell t_vb=
     endif
-    "let g:mapleader="\\"
-    let g:mapleader=","
+    let g:mapleader="\\"
+    "let g:mapleader=","
 
     set t_Co=256
     set cindent cino=j1,(0,ws,Ws
@@ -181,16 +189,15 @@ function! KSOO()
     set scrolloff=5
 
 
+    colorscheme iceberg
 
     if has("gui_running")
         noremap <M-Space> :simalt ~<CR>
         inoremap <M-Space> <C-O>:simalt ~<CR>
         cnoremap <M-Space> <C-C>:simalt ~<CR>
-        colorscheme atom
     else 
         let g:airline_theme='one'
-        set background=dark
-        colorscheme molokai
+        "set background=dark
         "exec "normal! silent :RainbowToggleOff"
     endif
 
