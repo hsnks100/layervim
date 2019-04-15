@@ -62,10 +62,10 @@ function! KSOO()
     noremap  <silent> 0 g^
     noremap  <silent> $ g$
     if has('nvim')
-        tnoremap <A-h> <C-\><C-n><C-w>h
-        tnoremap <A-j> <C-\><C-n><C-w>j
-        tnoremap <A-k> <C-\><C-n><C-w>k
-        tnoremap <A-l> <C-\><C-n><C-w>l
+        tnoremap <C-h> <C-\><C-n><C-w>h
+        tnoremap <C-j> <C-\><C-n><C-w>j
+        tnoremap <C-k> <C-\><C-n><C-w>k
+        tnoremap <C-l> <C-\><C-n><C-w>l
         nnoremap <F12> :bel sp 50 <Bar> resize 10 <Bar> terminal
         "nnoremap <F3> :bel sp 50 | resize 10 | terminal
     endif
@@ -120,8 +120,8 @@ function! KSOO()
     "nnoremap <Up> <C-w>k
     nnoremap <C-h> <C-W>h
     nnoremap <C-l> <C-W>l
-    nnoremap <C-j> :bn<CR> 
-    nnoremap <C-k> :bp<CR> 
+    nnoremap <C-j> <C-W>j 
+    nnoremap <C-k> <C-W>k 
     nnoremap [ <C-U>
     nnoremap ] <C-D>
     vnoremap [ <C-U>
@@ -269,6 +269,7 @@ function! KSOO()
         "autocmd BufWritePost *.vimrc,*.vim source $MYVIMRC
     augroup END 
 
+    set path+=/home/ksoo/fitness-nocam/Inc,/home/ksoo/fitness-nocam/Inc/Led
     "augroup myindent
     "au!
     "au BufEnter *.c normal gg=G

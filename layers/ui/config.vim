@@ -9,25 +9,10 @@ let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
 let g:airline_theme='base16_default'
 
-
-map <F2> :NERDTree<CR> 
-
-nmap <leader>w :BufExplorer<CR>
-let g:miniBufExplMapWindowNavVim = 1 
-let g:miniBufExplMapWindowNavArrows = 1 
-let g:miniBufExplMapCTabSwitchBufs = 1 
-let g:miniBufExplModSelTarget = 1 
-
-
-let g:gitgutter_map_keys = 0
-
-
-
 "<plug>(fzf-complete-path)
 nmap <leader><tab> <plug>(fzf-complete-path)
 
 
-let g:goyo_width = 200
 
 
 

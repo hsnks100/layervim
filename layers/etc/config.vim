@@ -20,8 +20,6 @@ set laststatus=2
 "call AirlineTheme(cool)
 
 
-nmap _ :call NERDComment(0, "toggle")<CR>
-vmap _ :call NERDComment("x", "toggle")<CR>
 
 let g:ctrlp_working_path_mode = 'r'
 
