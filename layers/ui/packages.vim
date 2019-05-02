@@ -24,6 +24,16 @@ Plug 'rafi/awesome-vim-colorschemes'
 Plug 'cocopon/pgmnt.vim'
 
 
+Plug 'easymotion/vim-easymotion'
+map  <Leader><Leader>f <Plug>(easymotion-bd-f)
+nmap <Leader><Leader>f <Plug>(easymotion-overwin-f)
+map <Leader><Leader>L <Plug>(easymotion-bd-jk)
+nmap <Leader><Leader>L <Plug>(easymotion-overwin-line)
+
+" Move to word
+map  <Leader><Leader>w <Plug>(easymotion-bd-w)
+nmap <Leader><Leader>w <Plug>(easymotion-overwin-w)
+
 
 Plug 'jreybert/vimagit'
 

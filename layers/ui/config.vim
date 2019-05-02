@@ -1,5 +1,4 @@
 
-let g:rainbow_active = 1 "0 if you want to enable it later via :RainbowToggle
 "Plug 'Enhanced-Javascript-syntax'
 " airline symbols
 let g:airline_powerline_fonts = 1

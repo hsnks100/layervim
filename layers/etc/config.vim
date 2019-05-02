@@ -57,7 +57,6 @@ let g:EasyMotion_smartcase = 1
 "map <Leader>j <Plug>(easymotion-j)
 "map <Leader>k <Plug>(easymotion-k) 
 
-command! A :call FSwitch('%', '') 
 "set clipboard=unnamed
 
 
@@ -66,6 +65,7 @@ nnoremap gr :Grep <C-R><C-W> *
 
 
 
+command! A :call FSwitch('%', '') 
 command! -bang -nargs=* -complete=file Make AsyncRun -program=make
 
 let g:DoxygenToolkit_briefTag_pre="@Brief  "
