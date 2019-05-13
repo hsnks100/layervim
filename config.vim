@@ -1,6 +1,9 @@
+
 function! g:LoadPlugins()
+    let g:mapleader=","
 
     Plug 'tpope/vim-fugitive'
+    Plug 'a/vim-plugin-template'
 
     Plug 'scrooloose/nerdtree'
     map <F2> :NERDTree<CR> 
@@ -152,8 +155,8 @@ function! g:KSOO()
     set guicursor=
     "set noesckeys
     set wrap lbr
-    noremap  <silent> k gk
-    noremap  <silent> j gj
+    " noremap  <silent> k gk
+    " noremap  <silent> j gj
     noremap  <silent> 0 g^
     noremap  <silent> $ g$
     if has('nvim')
@@ -221,10 +224,10 @@ function! g:KSOO()
     inoremap <C-l> <esc><C-W>l
     inoremap <C-j> <esc><C-W>j 
     inoremap <C-k> <esc><C-W>k 
-    nnoremap [ <C-U>
-    nnoremap ] <C-D>
-    vnoremap [ <C-U>
-    vnoremap ] <C-D>
+    nmap [ <C-U>
+    nmap ] <C-D>
+    vmap [ <C-U>
+    vmap ] <C-D>
 
 
     nnoremap <C-Left> <C-w><
@@ -287,11 +290,10 @@ function! g:KSOO()
     set undodir=~/vimrc/undo_files//
     set scrolloff=5
 
+    colorscheme iceberg 
     if exists('g:GtkGuiLoaded')
         " some code here
-        colorscheme darkblue
     else 
-        colorscheme iceberg 
     endif
 
 
@@ -375,5 +377,8 @@ endfunction
 call plug#begin('~/.vim/plugged')
 call g:LoadPlugins()
 call plug#end() 
+
+" call ToggleScrollbar()
+" call SetupScrollbarBindings()
 call g:KSOO() 
 filetype plugin indent on    " required
