@@ -81,7 +81,6 @@ function! g:LoadPlugins()
 
     Plug 'tpope/vim-repeat' 
     "Plug 'edkolev/vim-amake'
-    Plug 'skywind3000/asyncrun.vim'
     Plug 'vim-scripts/DoxygenToolkit.vim'
     " Track the engine.
     Plug 'SirVer/ultisnips'
@@ -92,9 +91,11 @@ function! g:LoadPlugins()
     Plug 'derekwyatt/vim-fswitch'
     command! A :call FSwitch('%', '') 
 
-    Plug 'reinh/vim-makegreen'
-    command! -bang -nargs=* -complete=file Make AsyncRun -program=make
+    Plug 'skywind3000/asyncrun.vim'
+    command! -bang -nargs=* -complete=file Make AsyncRun make -C ../build 
 
+    Plug 'vim-scripts/CycleColor'
+    Plug 'hsnks100/theme-finder'
 endfunction
 function! g:KSOO()
 
@@ -240,7 +241,7 @@ function! g:KSOO()
     nnoremap <Up> <C-w>+
     cnoremap <C-h> <Left>
     cnoremap <C-l> <Right>
-    nnoremap q: <nop>
+    " nnoremap q: <nop>
 
 
     if has('nvim')
@@ -290,7 +291,7 @@ function! g:KSOO()
     set undodir=~/vimrc/undo_files//
     set scrolloff=5
 
-    colorscheme iceberg 
+    colorscheme gruvbox 
     if exists('g:GtkGuiLoaded')
         " some code here
     else 
@@ -373,6 +374,8 @@ function! g:KSOO()
     "au BufEnter *.c normal gg=G
     "augroup END
 endfunction
+
+let g:no_plugin_maps = 1
 
 call plug#begin('~/.vim/plugged')
 call g:LoadPlugins()
