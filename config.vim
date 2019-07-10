@@ -1,4 +1,5 @@
 
+
 function! g:LoadPlugins()
     let g:mapleader=","
 
@@ -63,13 +64,13 @@ function! g:LoadPlugins()
     Plug 'jreybert/vimagit'
     Plug 'vim-scripts/L9'
     Plug 'vimplugin/project.vim'
-    Plug 'lenny0702/vim-sftp-sync-inPython'
     Plug 'mihaifm/bufstop'
-    Plug 'vim-scripts/LargeFile'
+    " Plug 'lenny0702/vim-sftp-sync-inPython'
+    " Plug 'vim-scripts/LargeFile'
     Plug 'vim-scripts/jade.vim'
     Plug 'wookiehangover/jshint.vim'
     Plug 'mattn/emmet-vim'
-    Plug 'hsnks100/VimExplorer'
+    " Plug 'hsnks100/VimExplorer'
     Plug 'benmills/vimux'
     Plug 'jszakmeister/vim-togglecursor'
     Plug 'tpope/vim-surround'
@@ -96,6 +97,25 @@ function! g:LoadPlugins()
 
     Plug 'vim-scripts/CycleColor'
     Plug 'hsnks100/theme-finder'
+
+
+    Plug 'djoshea/vim-autoread'
+    Plug 'tpope/vim-sleuth'
+    Plug 'vim-scripts/taglist.vim'
+    Plug 'vim-scripts/SrcExpl'
+    let g:SrcExpl_pluginList = [
+                \ "__Tag_List__",
+                \ "_NERD_tree_",
+                \ "Source_Explorer"
+                \ ]
+
+    " // Set "Enter" key to jump into the exact definition context 
+    let g:SrcExpl_jumpKey = "<ENTER>" 
+
+    " // Set "Space" key for back from the definition context 
+    let g:SrcExpl_gobackKey = "<SPACE>" 
+    let g:SrcExpl_isUpdateTags = 1
+
 endfunction
 function! g:KSOO()
 
@@ -109,7 +129,7 @@ function! g:KSOO()
     source $VIMRUNTIME/delmenu.vim
     source $VIMRUNTIME/menu.vim
 
-    set guifont=Inconsolata\ Bold\ 14
+    " set guifont=Inconsolata\ Bold\ 14
 
     set guioptions-=m
     set guioptions-=T
@@ -207,7 +227,7 @@ function! g:KSOO()
 
     vnoremap <C-V> s<ESC>"+p 
     nnoremap <leader>fed :e ~/layervim/config.vim<CR>
-    nnoremap <leader>feR :source ~/.vimrc<CR>
+    nnoremap <leader>feR :source ~/.config/nvim/init.vim<CR>
     nnoremap <leader>d :b#<bar>bd#<CR>
     "unmap ]%
     "unmap [%
@@ -383,5 +403,11 @@ call plug#end()
 
 " call ToggleScrollbar()
 " call SetupScrollbarBindings()
+
+" execute 'mapclear'
+
 call g:KSOO() 
 filetype plugin indent on    " required
+
+
+
