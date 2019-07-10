@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 set guioptions-=m
 set guioptions-=T
 set number            " line Ç¥½Ã¸¦ ÇØÁÝ´Ï´Ù.
@@ -48,3 +49,15 @@ set langmenu=en_US
 let $LANG = 'en_US'
 source $VIMRUNTIME/delmenu.vim
 source $VIMRUNTIME/menu.vim
+=======
+
+" call KSOO()
+
+
+
+function! g:BsdToKnR()
+    while(search("^\\s*{") > 0) 
+        execute "normal! /^\\s*{/\<CR>kJ" 
+    endwhile 
+endfunction
+>>>>>>> my

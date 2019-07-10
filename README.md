@@ -16,6 +16,8 @@ LayerVim help you to categorize your vim-configuration. LayerVim also can recogn
 I also referenced spacevim codes.  
 
 # my vimrc configration
+
+
 ![image](https://user-images.githubusercontent.com/3623889/28023502-0d4d321a-65c9-11e7-9bf1-8cbc9902f5cd.png)
 This LayerVim is Vim Configuration.
 

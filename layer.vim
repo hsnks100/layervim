@@ -1,6 +1,5 @@
 " ksoo function
 
-
 let g:layervim_dir = $HOME.'/layervim' 
 let g:layervim_layers_dir = '/layers'
 let g:layervim_private_layers_dir = '/private'
@@ -95,8 +94,8 @@ call layer#update()
 call s:load_packages() 
 call s:invoke_plug() 
 call plug#end()
-
 runtime basic.vim 
+
 call s:load_config()
 
 
