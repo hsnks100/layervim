@@ -6,4 +6,4 @@ cd ~/
 git clone https://github.com/hsnks100/layervim.git
 
 echo 'set rtp+=~/layervim' >> ~/.vimrc
-echo 'source ~/layervim/layer.vim' >> ~/.vimrc
+echo 'source ~/layervim/config.vim' >> ~/.vimrc
