@@ -2,10 +2,8 @@
 
 function! g:LoadPlugins()
     let g:mapleader=","
-
+    Plug 'hsnks100/vim-gutentags'
     Plug 'tpope/vim-fugitive'
-    Plug 'a/vim-plugin-template'
-
     Plug 'scrooloose/nerdtree'
     map <F2> :NERDTree<CR> 
 
@@ -48,9 +46,6 @@ function! g:LoadPlugins()
     " Move to word
     map  <Leader><Leader>w <Plug>(easymotion-bd-w)
     nmap <Leader><Leader>w <Plug>(easymotion-overwin-w)
-
-
-    Plug 'jreybert/vimagit'
 
     Plug 'leafgarland/typescript-vim'
     Plug 'jelera/vim-javascript-syntax'
@@ -96,26 +91,9 @@ function! g:LoadPlugins()
     command! -bang -nargs=* -complete=file Make AsyncRun make -C ../build 
 
     Plug 'vim-scripts/CycleColor'
-    Plug 'hsnks100/theme-finder'
-
-
     Plug 'djoshea/vim-autoread'
-    Plug 'tpope/vim-sleuth'
+    " Plug 'tpope/vim-sleuth'
     Plug 'vim-scripts/taglist.vim'
-    Plug 'vim-scripts/SrcExpl'
-    let g:SrcExpl_pluginList = [
-                \ "__Tag_List__",
-                \ "_NERD_tree_",
-                \ "Source_Explorer"
-                \ ]
-
-    " // Set "Enter" key to jump into the exact definition context 
-    let g:SrcExpl_jumpKey = "<ENTER>" 
-
-    " // Set "Space" key for back from the definition context 
-    let g:SrcExpl_gobackKey = "<SPACE>" 
-    let g:SrcExpl_isUpdateTags = 1
-
 endfunction
 function! g:KSOO()
 
