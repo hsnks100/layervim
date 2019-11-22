@@ -2,9 +2,13 @@
 
 function! g:LoadPlugins()
     let g:mapleader=","
-    Plug 'hsnks100/vim-gutentags'
+    " Plug 'hsnks100/vim-gutentags'
+    Plug 'ludovicchabant/vim-gutentags'
+
+    " let g:gutentags_trace = 1
     Plug 'tpope/vim-fugitive'
     Plug 'scrooloose/nerdtree'
+    let g:NERDTreeSortOrder=['\.go$', '\.cpp$']
     map <F2> :NERDTree<CR> 
 
     Plug 'vim-scripts/Tagbar'
@@ -12,15 +16,13 @@ function! g:LoadPlugins()
     Plug 'rakr/vim-one' 
     Plug 'vim-airline/vim-airline'
     Plug 'vim-airline/vim-airline-themes' 
-    "Plug 'Enhanced-Javascript-syntax'
-    " airline symbols
     let g:airline_powerline_fonts = 1
-    let g:airline#extensions#tabline#enabled = 1
-    let g:airline#extensions#tabline#fnamemod = ':t'
-    let g:airline#extensions#tabline#left_sep = ' '
-    let g:airline#extensions#tabline#left_alt_sep = '|'
+    " let g:airline#extensions#tabline#enabled = 1
+    " let g:airline#extensions#tabline#fnamemod = ':t'
+    " let g:airline#extensions#tabline#left_sep = ' '
+    " let g:airline#extensions#tabline#left_alt_sep = '|'
     let g:airline_theme='base16_default'
-    " let g:airline_theme='one'
+    let g:airline_theme='one'
 
     Plug 'jlanzarotta/bufexplorer'
     nmap <leader>w :BufExplorer<CR>
@@ -29,11 +31,9 @@ function! g:LoadPlugins()
     let g:miniBufExplMapCTabSwitchBufs = 1 
     let g:miniBufExplModSelTarget = 1 
 
-    Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-    Plug 'junegunn/fzf.vim' 
     Plug 'junegunn/goyo.vim'
     let g:goyo_width = 200
-    Plug 'rafi/awesome-vim-colorschemes'
+    " Plug 'rafi/awesome-vim-colorschemes'
     Plug 'cocopon/pgmnt.vim'
 
 
@@ -63,13 +63,12 @@ function! g:LoadPlugins()
     " Plug 'lenny0702/vim-sftp-sync-inPython'
     " Plug 'vim-scripts/LargeFile'
     Plug 'vim-scripts/jade.vim'
-    Plug 'wookiehangover/jshint.vim'
+    " Plug 'wookiehangover/jshint.vim'
     Plug 'mattn/emmet-vim'
-    " Plug 'hsnks100/VimExplorer'
     Plug 'benmills/vimux'
     Plug 'jszakmeister/vim-togglecursor'
     Plug 'tpope/vim-surround'
-    Plug 'changyuheng/color-scheme-holokai-for-vim'
+    " Plug 'changyuheng/color-scheme-holokai-for-vim'
     Plug 'easymotion/vim-easymotion' 
     Plug 'hsanson/vim-android' 
     Plug 'vim-scripts/grep.vim' 
@@ -90,10 +89,22 @@ function! g:LoadPlugins()
     Plug 'skywind3000/asyncrun.vim'
     command! -bang -nargs=* -complete=file Make AsyncRun make -C ../build 
 
-    Plug 'vim-scripts/CycleColor'
+    " Plug 'vim-scripts/CycleColor'
     Plug 'djoshea/vim-autoread'
     " Plug 'tpope/vim-sleuth'
     Plug 'vim-scripts/taglist.vim'
+    " Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+    " let g:go_def_mapping_enabled = 0
+    " let g:go_metalinter_enabled = ['vet', 'golint', 'errcheck']
+    " let g:go_highlight_build_constraints = 1
+    " let g:go_highlight_extra_types = 1
+    " let g:go_highlight_fields = 1
+    " let g:go_highlight_functions = 1
+    " let g:go_highlight_methods = 1
+    " let g:go_highlight_operators = 1
+    " let g:go_highlight_structs = 1
+    " let g:go_highlight_types = 1
+    " let g:go_auto_sameids = 1
 endfunction
 function! g:KSOO()
 
@@ -154,8 +165,8 @@ function! g:KSOO()
     set guicursor=
     "set noesckeys
     set wrap lbr
-    " noremap  <silent> k gk
-    " noremap  <silent> j gj
+    noremap  <silent> k gk
+    noremap  <silent> j gj
     noremap  <silent> 0 g^
     noremap  <silent> $ g$
     if has('nvim')
@@ -174,7 +185,7 @@ function! g:KSOO()
     " let g:mapleader="\\"
     let g:mapleader=","
 
-    set t_Co=256
+    " set t_Co=256
     set cindent cino=j1,(0,ws,Ws
 
     "nmap <C-j> :bn<CR>
@@ -195,7 +206,10 @@ function! g:KSOO()
     inoremap <C-y> <C-x><C-y>
     noremap YY :%y+<CR> 
     vnoremap Y "+y
-    vnoremap <C-C> "+y
+    " vnoremap <C-C> "+y
+    vnoremap <C-c> :w! ~/.vimbuffer \| !cat ~/.vimbuffer \| clip.exe <CR><CR>
+
+
     nnoremap <C-V> "+P
     inoremap <C-V> <ESC>"+pa
 
@@ -289,7 +303,9 @@ function! g:KSOO()
     set undodir=~/vimrc/undo_files//
     set scrolloff=5
 
-    colorscheme gruvbox 
+    " set background=light
+    colorscheme slate 
+
     if exists('g:GtkGuiLoaded')
         " some code here
     else 
