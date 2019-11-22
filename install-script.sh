@@ -11,7 +11,7 @@ git clone https://github.com/hsnks100/layervim.git
 echo 'set rtp+=~/layervim' > ~/.vimrc
 echo 'source ~/layervim/config.vim' >> ~/.vimrc
 
-mkdir -p /.config/nvim/
+mkdir -p ~/.config/nvim/
 echo 'set rtp+=~/layervim' > ~/.config/nvim/init.vim
 echo 'source ~/layervim/config.vim' >> ~/.config/nvim/init.vim
 
