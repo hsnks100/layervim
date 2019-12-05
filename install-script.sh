@@ -8,9 +8,12 @@ curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
 cd ~/
 git clone https://github.com/hsnks100/layervim.git
 
-echo 'set rtp+=~/layervim' >> ~/.vimrc
+echo 'set rtp+=~/layervim' > ~/.vimrc
 echo 'source ~/layervim/config.vim' >> ~/.vimrc
 
-mkdir -p /.config/nvim/
-echo 'set rtp+=~/layervim' >> ~/.config/nvim/init.vim
+mkdir -p ~/.config/nvim/
+echo 'set rtp+=~/layervim' > ~/.config/nvim/init.vim
 echo 'source ~/layervim/config.vim' >> ~/.config/nvim/init.vim
+
+vim -c "PlugInstall | q | q"
+nvim -c "PlugInstall | q | q"
