@@ -1,7 +1,21 @@
 
+function! g:ConfigPlugins() 
+    nmap <silent> gd <Plug>(coc-definition)
+    inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+    inoremap <silent><expr> <c-space> coc#refresh()
+    nmap <leader>rn <Plug>(coc-rename)
+    " nn <silent> gf :call CocLocations('ccls','$ccls/call')<cr>
+    " nn <silent> gF :call CocLocations('ccls','$ccls/call',{'callee':v:true})<cr>
 
+
+
+
+
+
+endfunction
 function! g:LoadPlugins()
     let g:mapleader=","
+    Plug 'neoclide/coc.nvim', {'branch': 'release'}
     " Plug 'hsnks100/vim-gutentags'
     Plug 'ludovicchabant/vim-gutentags'
 
@@ -365,7 +379,7 @@ function! g:KSOO()
     "nnoremap <F12> :!rm cscope.out cscope.files<CR>:!find `pwd` -iname '*.c' -o -iname '*.cpp' -o -iname '*.h' -o -iname '*.hpp' > cscope.files<CR>:!cscope -b -C -i  cscope.files -f cscope.out<CR>:cs kill -1<CR>:cs add cscope.out<CR>
     nnoremap <leader>s :cs find s <C-R>=expand("<cword>")<CR><CR>    
     nnoremap <leader>g :cs find g <C-R>=expand("<cword>")<CR><CR>    
-    nnoremap <leader>c :cs find c <C-R>=expand("<cword>")<CR><CR>    
+    " nnoremap <leader>c :cs find c <C-R>=expand("<cword>")<CR><CR>    
     nnoremap <leader>t :cs find t <C-R>=expand("<cword>")<CR><CR>    
     nnoremap <leader>e :cs find e <C-R>=expand("<cword>")<CR><CR>    
     nnoremap <leader>f :cs find f <C-R>=expand("<cfile>")<CR><CR>    
@@ -387,6 +401,19 @@ function! g:KSOO()
     "au!
     "au BufEnter *.c normal gg=G
     "augroup END
+
+    if !has("gui_running")     
+        " set t_Co=256     
+        " let &t_AB="\e[48;5;%dm"     
+        " let &t_AF="\e[38;5;%dm"     
+        " colorscheme zenburn 
+    endif
+    let &t_SI.="\e[5 q" 
+    let &t_SR.="\e[4 q" 
+    let &t_EI.="\e[1 q"
+
+
+    au BufRead,BufNewFile *.go set filetype=go
 endfunction
 
 let g:no_plugin_maps = 1
@@ -395,6 +422,7 @@ call plug#begin('~/.vim/plugged')
 call g:LoadPlugins()
 call plug#end() 
 
+call g:ConfigPlugins()
 " call ToggleScrollbar()
 " call SetupScrollbarBindings()
 
