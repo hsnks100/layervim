@@ -11,7 +11,6 @@ function! g:ConfigPlugins()
 
 
 
-
 endfunction
 function! g:LoadPlugins()
     let g:mapleader=","
@@ -24,6 +23,8 @@ function! g:LoadPlugins()
     Plug 'scrooloose/nerdtree'
     let g:NERDTreeSortOrder=['\.go$', '\.cpp$']
     map <F2> :NERDTree<CR> 
+
+    " Plug 'ryanoasis/vim-webdevicons'
 
     Plug 'vim-scripts/Tagbar'
     Plug 'altercation/vim-colors-solarized' 
@@ -92,16 +93,16 @@ function! g:LoadPlugins()
     "Plug 'edkolev/vim-amake'
     Plug 'vim-scripts/DoxygenToolkit.vim'
     " Track the engine.
-    Plug 'SirVer/ultisnips'
+    " Plug 'SirVer/ultisnips'
 
     " Snippets are separated from the engine. Add this if you want them:
-    Plug 'honza/vim-snippets'
+    " Plug 'honza/vim-snippets'
 
     Plug 'derekwyatt/vim-fswitch'
     command! A :call FSwitch('%', '') 
 
     Plug 'skywind3000/asyncrun.vim'
-    command! -bang -nargs=* -complete=file Make AsyncRun make -C ../build 
+    command! -bang -nargs=* -complete=file Make AsyncRun make -C ./build 
 
     " Plug 'vim-scripts/CycleColor'
     Plug 'djoshea/vim-autoread'
@@ -124,7 +125,7 @@ function! g:KSOO()
 
     syntax on 
     "language en_US.UTF-8
-    set fileencodings=utf-8,euc-kr
+    set fileencodings=utf-8,euc-kr,utf-16le
     set encoding=utf-8 
 
     set langmenu=en_US
