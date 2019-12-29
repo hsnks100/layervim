@@ -5,15 +5,11 @@ function! g:ConfigPlugins()
     inoremap <silent><expr> <c-space> coc#refresh()
     nmap <leader>rn <Plug>(coc-rename)
     " nn <silent> gf :call CocLocations('ccls','$ccls/call')<cr>
-    " nn <silent> gF :call CocLocations('ccls','$ccls/call',{'callee':v:true})<cr>
-
-
-
-
-
-
+    " nn <silent> gF :call CocLocations('ccls','$ccls/call',{'callee':v:true})<cr> 
 endfunction
+
 function! g:LoadPlugins()
+    Plug 'posva/vim-vue'
     let g:mapleader=","
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
     " Plug 'hsnks100/vim-gutentags'
@@ -92,10 +88,7 @@ function! g:LoadPlugins()
     "Plug 'edkolev/vim-amake'
     Plug 'vim-scripts/DoxygenToolkit.vim'
     " Track the engine.
-    Plug 'SirVer/ultisnips'
 
-    " Snippets are separated from the engine. Add this if you want them:
-    Plug 'honza/vim-snippets'
 
     Plug 'derekwyatt/vim-fswitch'
     command! A :call FSwitch('%', '') 
@@ -318,7 +311,7 @@ function! g:KSOO()
     set scrolloff=5
 
     " set background=light
-    colorscheme slate 
+    colorscheme blue 
 
     if exists('g:GtkGuiLoaded')
         " some code here
