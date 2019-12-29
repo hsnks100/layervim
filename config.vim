@@ -4,13 +4,19 @@ function! g:ConfigPlugins()
     inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
     inoremap <silent><expr> <c-space> coc#refresh()
     nmap <leader>rn <Plug>(coc-rename)
+    nn <silent> gt :call CocLocations('ccls','$ccls/call')<cr>
+    nn <silent> gT :call CocLocations('ccls','$ccls/call',{'callee':v:true})<cr> 
     " nn <silent> gf :call CocLocations('ccls','$ccls/call')<cr>
     " nn <silent> gF :call CocLocations('ccls','$ccls/call',{'callee':v:true})<cr> 
 endfunction
 
+
 function! g:LoadPlugins()
     Plug 'posva/vim-vue'
     let g:mapleader=","
+
+    Plug 'vim-scripts/DoxygenToolkit.vim'
+
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
     " Plug 'hsnks100/vim-gutentags'
     Plug 'ludovicchabant/vim-gutentags'
@@ -20,6 +26,8 @@ function! g:LoadPlugins()
     Plug 'scrooloose/nerdtree'
     let g:NERDTreeSortOrder=['\.go$', '\.cpp$']
     map <F2> :NERDTree<CR> 
+
+    " Plug 'ryanoasis/vim-webdevicons'
 
     Plug 'vim-scripts/Tagbar'
     Plug 'altercation/vim-colors-solarized' 
@@ -89,12 +97,12 @@ function! g:LoadPlugins()
     Plug 'vim-scripts/DoxygenToolkit.vim'
     " Track the engine.
 
-
     Plug 'derekwyatt/vim-fswitch'
     command! A :call FSwitch('%', '') 
 
     Plug 'skywind3000/asyncrun.vim'
-    command! -bang -nargs=* -complete=file Make AsyncRun make -C ../build 
+    command! -bang -nargs=* -complete=file Make AsyncRun make -C build 
+    nnoremap <leader><leader><leader> :AsyncRun make -C build
 
     " Plug 'vim-scripts/CycleColor'
     Plug 'djoshea/vim-autoread'
@@ -117,7 +125,7 @@ function! g:KSOO()
 
     syntax on 
     "language en_US.UTF-8
-    set fileencodings=utf-8,euc-kr
+    set fileencodings=utf-8,euc-kr,utf-16le
     set encoding=utf-8 
 
     set langmenu=en_US
@@ -261,6 +269,9 @@ function! g:KSOO()
     cnoremap <C-h> <Left>
     cnoremap <C-l> <Right>
     " nnoremap q: <nop>
+
+    nnoremap K :g/^\s*$/d 
+    nnoremap KNR :%s/\(^\s\(\(#\)\@!.\).*\)\n\s*{/\1\ {/gc
 
 
     if has('nvim')
