@@ -1,0 +1,181 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
+!_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
+!_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
+!_TAG_PROGRAM_URL	https://ctags.io/	/official site/
+!_TAG_PROGRAM_VERSION	0.0.0	/3fdf28bc/
+$	config.vim	/^    noremap  <silent> $ g\$$/;"	m
+$LANG	basic.vim	/^let $LANG = 'en_US'$/;"	v
+,.	config.vim	/^    cmap ,. <ESC>$/;"	m
+,.	config.vim	/^    imap ,. <ESC>$/;"	m
+0	config.vim	/^    noremap  <silent> 0 g^$/;"	m
+<C-Down>	config.vim	/^    nnoremap <C-Down> <C-w>-$/;"	m
+<C-Left>	config.vim	/^    nnoremap <C-Left> <C-w><$/;"	m
+<C-Right>	config.vim	/^    nnoremap <C-Right> <C-w>>$/;"	m
+<C-S-B>	config.vim	/^        nnoremap <C-S-B> :wa<CR>:Make<CR>$/;"	m
+<C-Up>	config.vim	/^    nnoremap <C-Up> <C-w>+$/;"	m
+<C-V>	config.vim	/^    inoremap <C-V> <ESC>"+pa$/;"	m
+<C-V>	config.vim	/^    nnoremap <C-V> "+P$/;"	m
+<C-V>	config.vim	/^    vnoremap <C-V> s<ESC>"+p $/;"	m
+<C-c>	config.vim	/^    vnoremap <C-c> :w! ~\/.vimbuffer \\| !cat ~\/.vimbuffer \\| clip.exe <CR><CR>$/;"	m
+<C-e>	config.vim	/^    inoremap <C-e> <C-x><C-e>$/;"	m
+<C-h>	config.vim	/^    cnoremap <C-h> <Left>$/;"	m
+<C-h>	config.vim	/^    inoremap <C-h> <esc><C-W>h$/;"	m
+<C-h>	config.vim	/^    nnoremap <C-h> <C-W>h$/;"	m
+<C-j>	config.vim	/^    inoremap <C-j> <esc><C-W>j $/;"	m
+<C-j>	config.vim	/^    nnoremap <C-j> <C-W>j $/;"	m
+<C-k>	config.vim	/^    inoremap <C-k> <esc><C-W>k $/;"	m
+<C-k>	config.vim	/^    nnoremap <C-k> <C-W>k $/;"	m
+<C-l>	config.vim	/^    cnoremap <C-l> <Right>$/;"	m
+<C-l>	config.vim	/^    inoremap <C-l> <esc><C-W>l$/;"	m
+<C-l>	config.vim	/^    nnoremap <C-l> <C-W>l$/;"	m
+<C-y>	config.vim	/^    inoremap <C-y> <C-x><C-y>$/;"	m
+<Down>	config.vim	/^    nnoremap <Down> <C-w>-$/;"	m
+<F12>	config.vim	/^        nnoremap <F12> :bel sp <Bar> resize 10 <Bar> terminal$/;"	m
+<F2>	config.vim	/^    map <F2> :NERDTree<CR> $/;"	m
+<F2>	layers/ui/packages.vim	/^map <F2> :NERDTree<CR> $/;"	m
+<Leader><Leader>L	config.vim	/^    map <Leader><Leader>L <Plug>(easymotion-bd-jk)$/;"	m
+<Leader><Leader>L	config.vim	/^    nmap <Leader><Leader>L <Plug>(easymotion-overwin-line)$/;"	m
+<Leader><Leader>L	layers/ui/packages.vim	/^map <Leader><Leader>L <Plug>(easymotion-bd-jk)$/;"	m
+<Leader><Leader>L	layers/ui/packages.vim	/^nmap <Leader><Leader>L <Plug>(easymotion-overwin-line)$/;"	m
+<Leader><Leader>f	config.vim	/^    map  <Leader><Leader>f <Plug>(easymotion-bd-f)$/;"	m
+<Leader><Leader>f	config.vim	/^    nmap <Leader><Leader>f <Plug>(easymotion-overwin-f)$/;"	m
+<Leader><Leader>f	layers/ui/packages.vim	/^map  <Leader><Leader>f <Plug>(easymotion-bd-f)$/;"	m
+<Leader><Leader>f	layers/ui/packages.vim	/^nmap <Leader><Leader>f <Plug>(easymotion-overwin-f)$/;"	m
+<Leader><Leader>w	config.vim	/^    map  <Leader><Leader>w <Plug>(easymotion-bd-w)$/;"	m
+<Leader><Leader>w	config.vim	/^    nmap <Leader><Leader>w <Plug>(easymotion-overwin-w)$/;"	m
+<Leader><Leader>w	layers/ui/packages.vim	/^map  <Leader><Leader>w <Plug>(easymotion-bd-w)$/;"	m
+<Leader><Leader>w	layers/ui/packages.vim	/^nmap <Leader><Leader>w <Plug>(easymotion-overwin-w)$/;"	m
+<Left>	config.vim	/^    nnoremap <Left> <C-w><$/;"	m
+<Right>	config.vim	/^    nnoremap <Right> <C-w>>$/;"	m
+<S-CR>	config.vim	/^    nmap <S-CR> i<CR><ESC>$/;"	m
+<S-Insert>	config.vim	/^    inoremap <S-Insert> <ESC>"+pa$/;"	m
+<S-Insert>	config.vim	/^    nnoremap <S-Insert> "+P$/;"	m
+<S-SPACE>	config.vim	/^    nmap <S-SPACE> i<SPACE><ESC>l$/;"	m
+<Up>	config.vim	/^    nnoremap <Up> <C-w>+$/;"	m
+<c-space>	config.vim	/^    inoremap <silent><expr> <c-space> coc#refresh()$/;"	m
+<cr>	config.vim	/^    inoremap <expr> <cr> pumvisible() ? "\\<C-y>" : "\\<C-g>u\\<CR>"$/;"	m
+<kDivide>	config.vim	/^        map <kDivide> <c-w><$/;"	m
+<kMinus>	config.vim	/^        map <kMinus> <C-W>-$/;"	m
+<kMultiply>	config.vim	/^        map <kMultiply> <c-w>>$/;"	m
+<kPlus>	config.vim	/^        map <kPlus> <C-W>+$/;"	m
+<leader><tab>	layers/ui/config.vim	/^nmap <leader><tab> <plug>(fzf-complete-path)$/;"	m
+<leader>d	config.vim	/^    nnoremap <leader>d :b#<bar>bd#<CR>$/;"	m
+<leader>e	config.vim	/^    nnoremap <leader>e :cs find e <C-R>=expand("<cword>")<CR><CR>    $/;"	m
+<leader>f	config.vim	/^    nnoremap <leader>f :cs find f <C-R>=expand("<cfile>")<CR><CR>    $/;"	m
+<leader>feR	config.vim	/^    nnoremap <leader>feR :source ~\/.config\/nvim\/init.vim<CR>$/;"	m
+<leader>fed	config.vim	/^    nnoremap <leader>fed :e ~\/layervim\/config.vim<CR>$/;"	m
+<leader>g	config.vim	/^    nnoremap <leader>g :cs find g <C-R>=expand("<cword>")<CR><CR>    $/;"	m
+<leader>g	config.vim	/^    nnoremap <leader>g :cs find g <C-R>=expand("<cword>")<CR><CR>$/;"	m
+<leader>gb	layers/etc/config.vim	/^nnoremap <leader>gb :Gblame<CR>$/;"	m
+<leader>gc	layers/etc/config.vim	/^nnoremap <leader>gc :Gcommit<CR>$/;"	m
+<leader>gp	layers/etc/config.vim	/^nnoremap <leader>gp :Git push<CR>$/;"	m
+<leader>gs	layers/etc/config.vim	/^nnoremap <leader>gs :Gstatus<CR> $/;"	m
+<leader>gw	layers/etc/config.vim	/^nnoremap <leader>gw :Gwrite<CR>$/;"	m
+<leader>i	config.vim	/^    nnoremap <leader>i :cs find i ^<C-R>=expand("<cfile>")<CR>$<CR>$/;"	m
+<leader>rn	config.vim	/^    nmap <leader>rn <Plug>(coc-rename)$/;"	m
+<leader>s	config.vim	/^    nnoremap <leader>s :cs find s <C-R>=expand("<cword>")<CR><CR>    $/;"	m
+<leader>sv	config.vim	/^    nnoremap <leader>sv :source $MYVIMRC<cr>$/;"	m
+<leader>t	config.vim	/^    nnoremap <leader>t :cs find t <C-R>=expand("<cword>")<CR><CR>    $/;"	m
+<leader>w	config.vim	/^    nmap <leader>w :BufExplorer<CR>$/;"	m
+<leader>w	layers/ui/packages.vim	/^nmap <leader>w :BufExplorer<CR>$/;"	m
+A	config.vim	/^    command! A :call FSwitch('%', '') $/;"	c
+A	layers/etc/config.vim	/^command! A :call FSwitch('%', '') $/;"	c
+BsdToKnR	basic.vim	/^function! g:BsdToKnR()$/;"	f
+ConfigPlugins	config.vim	/^function! g:ConfigPlugins() $/;"	f
+F	layers/etc/config.vim	/^nmap F <Plug>(easymotion-bd-jk)$/;"	m
+Installation	README.md	/^# Installation$/;"	c
+KSOO	config.vim	/^function! g:KSOO()$/;"	f
+LoadCscope	config.vim	/^    function! LoadCscope()$/;"	f
+LoadPlugins	config.vim	/^function! g:LoadPlugins()$/;"	f
+MP	layer.vim	/^command! -nargs=+ -bar MP call s:my_plugins(<args>)$/;"	c
+Make	config.vim	/^    command! -bang -nargs=* -complete=file Make AsyncRun make -C ..\/build $/;"	c
+Make	layers/etc/config.vim	/^command! -bang -nargs=* -complete=file Make AsyncRun -program=make$/;"	c
+QFix	config.vim	/^    command! -bang -nargs=? QFix call QFixToggle(<bang>0)$/;"	c
+QFixToggle	config.vim	/^    function! QFixToggle(forced)$/;"	f
+Vim Plug Requirement	README.md	/^# Vim Plug Requirement$/;"	c
+Y	config.vim	/^    vnoremap Y "+y$/;"	m
+YY	config.vim	/^    noremap YY :%y+<CR> $/;"	m
+[	config.vim	/^    nmap [ <C-U>$/;"	m
+[	config.vim	/^    vmap [ <C-U>$/;"	m
+\\`	config.vim	/^    nmap <silent> \\` :QFix<CR> $/;"	m
+]	config.vim	/^    nmap ] <C-D>$/;"	m
+]	config.vim	/^    vmap ] <C-D>$/;"	m
+_	config.vim	/^    nmap _ :TComment<CR>$/;"	m
+_	config.vim	/^    vmap _ :TComment<CR>$/;"	m
+_	layers/syntax/packages.vim	/^nmap _ :TComment<CR>$/;"	m
+_	layers/syntax/packages.vim	/^vmap _ :TComment<CR>$/;"	m
+ciw	config.vim	/^    nnoremap ciw "_ciw$/;"	m
+f	layers/etc/config.vim	/^nmap f <Plug>(easymotion-bd-wl) $/;"	m
+filetype_vim	config.vim	/^    augroup filetype_vim$/;"	a
+final step	README.md	/^# final step$/;"	c
+g:DoxygenToolkit_authorName	layers/etc/config.vim	/^let g:DoxygenToolkit_authorName="Han Gyoung-Su"$/;"	v
+g:DoxygenToolkit_blockFooter	layers/etc/config.vim	/^let g:DoxygenToolkit_blockFooter="--------------------------------------------------------------/;"	v
+g:DoxygenToolkit_blockHeader	layers/etc/config.vim	/^let g:DoxygenToolkit_blockHeader="--------------------------------------------------------------/;"	v
+g:DoxygenToolkit_briefTag_pre	layers/etc/config.vim	/^let g:DoxygenToolkit_briefTag_pre="@Brief  "$/;"	v
+g:DoxygenToolkit_licenseTag	layers/etc/config.vim	/^let g:DoxygenToolkit_licenseTag="My own license"$/;"	v
+g:DoxygenToolkit_paramTag_pre	layers/etc/config.vim	/^let g:DoxygenToolkit_paramTag_pre="@Param "$/;"	v
+g:DoxygenToolkit_returnTag	layers/etc/config.vim	/^let g:DoxygenToolkit_returnTag="@Returns   "$/;"	v
+g:EasyMotion_do_mapping	layers/etc/config.vim	/^let g:EasyMotion_do_mapping = 0 " Disable default mappings$/;"	v
+g:EasyMotion_smartcase	layers/etc/config.vim	/^let g:EasyMotion_smartcase = 1 $/;"	v
+g:NERDTreeSortOrder	config.vim	/^    let g:NERDTreeSortOrder=['\\.go$', '\\.cpp$']$/;"	v
+g:airline#extensions#tabline#enabled	layers/ui/config.vim	/^let g:airline#extensions#tabline#enabled = 1$/;"	v
+g:airline#extensions#tabline#fnamemod	layers/ui/config.vim	/^let g:airline#extensions#tabline#fnamemod = ':t'$/;"	v
+g:airline#extensions#tabline#left_alt_sep	layers/ui/config.vim	/^let g:airline#extensions#tabline#left_alt_sep = '|'$/;"	v
+g:airline#extensions#tabline#left_sep	layers/ui/config.vim	/^let g:airline#extensions#tabline#left_sep = ' '$/;"	v
+g:airline_powerline_fonts	config.vim	/^    let g:airline_powerline_fonts = 1$/;"	v
+g:airline_powerline_fonts	layers/ui/config.vim	/^let g:airline_powerline_fonts = 1$/;"	v
+g:airline_theme	config.vim	/^    let g:airline_theme='base16_default'$/;"	v
+g:airline_theme	config.vim	/^    let g:airline_theme='one'$/;"	v
+g:airline_theme	layers/ui/config.vim	/^let g:airline_theme='base16_default'$/;"	v
+g:ctrlp_custom_ignore	layers/etc/config.vim	/^let g:ctrlp_custom_ignore = {$/;"	v
+g:ctrlp_working_path_mode	layers/etc/config.vim	/^let g:ctrlp_working_path_mode = 'r'$/;"	v
+g:deoplete#enable_at_startup	layers/syntax/config.vim	/^let g:deoplete#enable_at_startup = 1$/;"	v
+g:goyo_width	config.vim	/^    let g:goyo_width = 200$/;"	v
+g:goyo_width	layers/ui/packages.vim	/^let g:goyo_width = 200$/;"	v
+g:layers_sum	layer.vim	/^let g:layers_sum = 0$/;"	v
+g:layervim_dir	layer.vim	/^let g:layervim_dir = $HOME.'\/layervim' $/;"	v
+g:layervim_excluded	layer.vim	/^let g:layervim_excluded = []$/;"	v
+g:layervim_info_path	layer.vim	/^    let g:layervim_info_path = g:WINDOWS ? s:path(g:layervim_info_path) : g:layervim_info_path$/;"	v
+g:layervim_info_path	layer.vim	/^    let g:layervim_info_path = g:layervim_dir. '\/core\/autoload\/info.vim'$/;"	v
+g:layervim_layers_dir	layer.vim	/^let g:layervim_layers_dir = '\/layers'$/;"	v
+g:layervim_plugins	layer.vim	/^let g:layervim_plugins = []$/;"	v
+g:layervim_private_layers_dir	layer.vim	/^let g:layervim_private_layers_dir = '\/private'$/;"	v
+g:mapleader	config.vim	/^    let g:mapleader=","$/;"	v
+g:miniBufExplMapCTabSwitchBufs	config.vim	/^    let g:miniBufExplMapCTabSwitchBufs = 1 $/;"	v
+g:miniBufExplMapCTabSwitchBufs	layers/ui/packages.vim	/^let g:miniBufExplMapCTabSwitchBufs = 1 $/;"	v
+g:miniBufExplMapWindowNavArrows	config.vim	/^    let g:miniBufExplMapWindowNavArrows = 1 $/;"	v
+g:miniBufExplMapWindowNavArrows	layers/ui/packages.vim	/^let g:miniBufExplMapWindowNavArrows = 1 $/;"	v
+g:miniBufExplMapWindowNavVim	config.vim	/^    let g:miniBufExplMapWindowNavVim = 1 $/;"	v
+g:miniBufExplMapWindowNavVim	layers/ui/packages.vim	/^let g:miniBufExplMapWindowNavVim = 1 $/;"	v
+g:miniBufExplModSelTarget	config.vim	/^    let g:miniBufExplModSelTarget = 1 $/;"	v
+g:miniBufExplModSelTarget	layers/ui/packages.vim	/^let g:miniBufExplModSelTarget = 1 $/;"	v
+g:netrw_chgwin	layers/etc/config.vim	/^let g:netrw_chgwin = 2$/;"	v
+g:netrw_liststyle	layers/etc/config.vim	/^let g:netrw_liststyle = 3 $/;"	v
+g:netrw_silent	layers/etc/config.vim	/^let g:netrw_silent = 1$/;"	v
+g:netrw_split	layers/etc/config.vim	/^let g:netrw_split = 2$/;"	v
+g:no_plugin_maps	config.vim	/^let g:no_plugin_maps = 1$/;"	v
+g:plug_options	layer.vim	/^        let g:plug_options[a:1] = a:2$/;"	v
+g:plug_options	layer.vim	/^let g:plug_options = {}$/;"	v
+g:qfix_win	config.vim	/^            let g:qfix_win = bufnr("$")$/;"	v
+g:user_emmet_leader_key	layers/etc/config.vim	/^let g:user_emmet_leader_key='<C-Z>'$/;"	v
+gd	config.vim	/^    nmap <silent> gd <Plug>(coc-definition)$/;"	m
+gr	config.vim	/^    nnoremap gr :vimgrep \/<C-R><C-W>\/ **<CR>:copen<CR>$/;"	m
+gr	config.vim	/^    vnoremap gr "gy:vimgrep \/<C-R>g\/ **$/;"	m
+gr	layers/etc/config.vim	/^nnoremap gr :Grep <C-R><C-W> *$/;"	m
+j	config.vim	/^    noremap  <silent> j gj$/;"	m
+jj	config.vim	/^    imap jj <ESC>j$/;"	m
+k	config.vim	/^    noremap  <silent> k gk$/;"	m
+kk	config.vim	/^    imap kk <ESC>k$/;"	m
+layer#update	layer.vim	/^function! layer#update() abort$/;"	f
+linux	README.md	/^# linux$/;"	c
+my vimrc configration	README.md	/^# my vimrc configration$/;"	c
+p	config.vim	/^    vnoremap p "_dP$/;"	m
+s:invoke_plug	layer.vim	/^function! s:invoke_plug()$/;"	f
+s:layers_info	layer.vim	/^function! s:layers_info() abort$/;"	f
+s:load_config	layer.vim	/^function! s:load_config()$/;"	f
+s:load_packages	layer.vim	/^function! s:load_packages()$/;"	f
+s:my_plugins	layer.vim	/^function! s:my_plugins(...)$/;"	f
+windows	README.md	/^# windows$/;"	c
+x	config.vim	/^    nnoremap x "_x$/;"	m
