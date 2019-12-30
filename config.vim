@@ -236,7 +236,9 @@ function! g:KSOO()
     noremap YY :%y+<CR> 
     vnoremap Y "+y
     " vnoremap <C-C> "+y
-    vnoremap <C-c> :w! ~/.vimbuffer \| !cat ~/.vimbuffer \| clip.exe <CR><CR>
+    vnoremap <C-c> "zy:call writefile(getreg('z', 1, 1), "/tmp/vimbuffer") \| !cat /tmp/vimbuffer \| clip.exe <CR><CR>
+
+    " w! ~/.vimbuffer \| !cat ~/.vimbuffer \| clip.exe <CR><CR>
 
 
     nnoremap <C-V> "+P
