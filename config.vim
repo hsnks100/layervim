@@ -13,8 +13,7 @@ endfunction
 
 function! g:LoadPlugins()
     Plug 'posva/vim-vue'
-    let g:mapleader=","
-
+    let g:mapleader="," 
     Plug 'vim-scripts/DoxygenToolkit.vim'
 
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -101,7 +100,7 @@ function! g:LoadPlugins()
     command! A :call FSwitch('%', '') 
 
     Plug 'skywind3000/asyncrun.vim'
-    command! -bang -nargs=* -complete=file Make AsyncRun make -C build 
+    command! -bang -nargs=* -complete=file Make AsyncRun make -C ../build 
     nnoremap <leader><leader><leader> :AsyncRun make -C build
 
     " Plug 'vim-scripts/CycleColor'
@@ -242,8 +241,8 @@ function! g:KSOO()
     "unmap [%
 
     nnoremap <leader>sv :source $MYVIMRC<cr>
-    nnoremap gr :vimgrep /<C-R><C-W>/ **<CR>:copen<CR>
-    vnoremap gr "gy:vimgrep /<C-R>g/ **
+    nnoremap gr :Ggrep <C-R><C-W>
+    " vnoremap gr "gy:vimgrep /<C-R>g/ **
     "nnoremap <Down> <C-w>j
     "nnoremap <Up> <C-w>k
     nnoremap <C-h> <C-W>h
