@@ -12,6 +12,7 @@ endfunction
 
 
 function! g:LoadPlugins()
+    Plug 'ustinmk/vim-syntax-extra'
     Plug 'posva/vim-vue'
     let g:mapleader=","
 
@@ -101,7 +102,7 @@ function! g:LoadPlugins()
     command! A :call FSwitch('%', '') 
 
     Plug 'skywind3000/asyncrun.vim'
-    command! -bang -nargs=* -complete=file Make AsyncRun make -C build 
+    command! -bang -nargs=* -complete=file Make AsyncRun make -C ../build 
     nnoremap <leader><leader><leader> :AsyncRun make -C build
 
     " Plug 'vim-scripts/CycleColor'
@@ -189,7 +190,7 @@ function! g:KSOO()
         tnoremap <C-j> <C-\><C-n><C-w>j
         tnoremap <C-k> <C-\><C-n><C-w>k
         tnoremap <C-l> <C-\><C-n><C-w>l
-        nnoremap <F12> :bel sp <Bar> resize 10 <Bar> terminal
+        nnoremap \\ :bel sp <Bar> resize 10 <Bar> terminal
         "nnoremap <F3> :bel sp 50 | resize 10 | terminal
     endif
 
@@ -226,24 +227,16 @@ function! g:KSOO()
 
     " w! ~/.vimbuffer \| !cat ~/.vimbuffer \| clip.exe <CR><CR>
 
+    nnoremap <leader>y "+y
+    nnoremap <leader>p "+P 
 
-    nnoremap <C-V> "+P
-    inoremap <C-V> <ESC>"+pa
-
-    nnoremap <S-Insert> "+P
-    inoremap <S-Insert> <ESC>"+pa
-
-
-    vnoremap <C-V> s<ESC>"+p 
     nnoremap <leader>fed :e ~/layervim/config.vim<CR>
     nnoremap <leader>feR :source ~/.config/nvim/init.vim<CR>
     nnoremap <leader>d :b#<bar>bd#<CR>
-    "unmap ]%
-    "unmap [%
 
     nnoremap <leader>sv :source $MYVIMRC<cr>
-    nnoremap gr :vimgrep /<C-R><C-W>/ **<CR>:copen<CR>
-    vnoremap gr "gy:vimgrep /<C-R>g/ **
+    nnoremap gr :grep <C-R><C-W> *<CR>:copen<CR>
+    vnoremap gr "gy:grep <C-R>g *
     "nnoremap <Down> <C-w>j
     "nnoremap <Up> <C-w>k
     nnoremap <C-h> <C-W>h
@@ -309,14 +302,6 @@ function! g:KSOO()
     endif
 
     autocmd BufNewFile,BufRead * set formatoptions=tcq
-    if bufwinnr(1)
-        map <kPlus> <C-W>+
-        map <kMinus> <C-W>-
-        map <kDivide> <c-w><
-        map <kMultiply> <c-w>>
-    endif
-
-
     " swp 파일들 한쪽으로 모으기.
     set backupdir=~/vimrc/backup_files//
     set directory=~/vimrc/swap_files//
@@ -325,14 +310,6 @@ function! g:KSOO()
 
     " set background=light
     colorscheme blue 
-
-    if exists('g:GtkGuiLoaded')
-        " some code here
-    else 
-    endif
-
-
-
     if has("win32")
         runtime delmenu.vim
         runtime menu.vim
@@ -366,10 +343,7 @@ function! g:KSOO()
             exe "cs add " . db . " " . path
         elseif $CSCOPE_DB != "" 
             cs add $CSCOPE_DB
-        endif
-
-        silent cs add ~/hisdk/mpp/include/cscope.out
-        silent cs add ~/hisdk/mpp/sample/cscope.out
+        endif 
         set cscopeverbose
     endfunction
     au BufEnter /* call LoadCscope()
@@ -389,8 +363,6 @@ function! g:KSOO()
     nnoremap <leader>t :cs find t <C-R>=expand("<cword>")<CR><CR>    
     nnoremap <leader>e :cs find e <C-R>=expand("<cword>")<CR><CR>    
     nnoremap <leader>f :cs find f <C-R>=expand("<cfile>")<CR><CR>    
-    nnoremap <leader>i :cs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
-    "nnoremap <leader>d :cs find d <C-R>=expand("<cword>")<CR><CR>
     nnoremap <leader>g :cs find g <C-R>=expand("<cword>")<CR><CR>
 
 
@@ -402,23 +374,12 @@ function! g:KSOO()
         "autocmd BufWritePost *.vimrc,*.vim source $MYVIMRC
     augroup END 
 
-    set path+=/home/ksoo/fitness-nocam/Inc,/home/ksoo/fitness-nocam/Inc/Led
-    "augroup myindent
-    "au!
-    "au BufEnter *.c normal gg=G
-    "augroup END
-
-    if !has("gui_running")     
-        " set t_Co=256     
-        " let &t_AB="\e[48;5;%dm"     
-        " let &t_AF="\e[38;5;%dm"     
-        " colorscheme zenburn 
-    endif
     let &t_SI.="\e[5 q" 
     let &t_SR.="\e[4 q" 
     let &t_EI.="\e[1 q"
 
 
+    hi Error		guifg=red		guibg=darkBlue	gui=underline ctermfg=red ctermbg=darkblue
     au BufRead,BufNewFile *.go set filetype=go
 endfunction
 
