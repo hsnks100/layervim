@@ -51,7 +51,7 @@ function! g:LoadPlugins()
 
     Plug 'junegunn/goyo.vim'
     let g:goyo_width = 200
-    " Plug 'rafi/awesome-vim-colorschemes'
+    Plug 'rafi/awesome-vim-colorschemes'
     Plug 'cocopon/pgmnt.vim'
 
 
@@ -125,7 +125,7 @@ function! g:KSOO()
 
     syntax on 
     "language en_US.UTF-8
-    set fileencodings=utf-8,euc-kr,utf-16le
+    set fileencodings=utf-8,cp949,utf-16le,euc-kr
     set encoding=utf-8 
 
     set langmenu=en_US
@@ -234,8 +234,9 @@ function! g:KSOO()
     nnoremap <leader>d :b#<bar>bd#<CR>
 
     nnoremap <leader>sv :source $MYVIMRC<cr>
-    nnoremap gr :grep <C-R><C-W> *<CR>:copen<CR>
-    vnoremap gr "gy:grep <C-R>g *
+    "<CR>:copen<CR>
+    nnoremap gr :silent grep <C-R><C-W> * 
+    vnoremap gr "gy:silent grep <C-R>g *
     "nnoremap <Down> <C-w>j
     "nnoremap <Up> <C-w>k
     nnoremap <C-h> <C-W>h
@@ -309,6 +310,7 @@ function! g:KSOO()
 
     " set background=light
     colorscheme blue 
+    " set background=dark
     if has("win32")
         runtime delmenu.vim
         runtime menu.vim
