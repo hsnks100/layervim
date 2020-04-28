@@ -35,12 +35,14 @@ function! g:LoadPlugins()
     Plug 'vim-airline/vim-airline'
     Plug 'vim-airline/vim-airline-themes' 
     let g:airline_powerline_fonts = 1
-    " let g:airline#extensions#tabline#enabled = 1
+    let g:airline#extensions#tabline#enabled = 1
     " let g:airline#extensions#tabline#fnamemod = ':t'
     " let g:airline#extensions#tabline#left_sep = ' '
     " let g:airline#extensions#tabline#left_alt_sep = '|'
-    let g:airline_theme='base16_default'
-    let g:airline_theme='one'
+    let g:airline_theme='base16_default' 
+    " let g:airline_theme='one'
+    let g:airline#extensions#whitespace#enabled = 0
+
 
     Plug 'jlanzarotta/bufexplorer'
     nmap <leader>w :BufExplorer<CR>
@@ -166,7 +168,7 @@ function! g:KSOO()
     set showmatch  
     set nowrap    
     set wmnu        
-    set autochdir
+    set noautochdir
     set noerrorbells visualbell t_vb=
     set hidden
     set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<,space:#
