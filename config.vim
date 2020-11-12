@@ -17,9 +17,8 @@ function! g:LoadPlugins()
     let g:mapleader="," 
     Plug 'vim-scripts/DoxygenToolkit.vim'
 
-    Plug 'neoclide/coc.nvim', {'branch': 'release'}
     " Plug 'hsnks100/vim-gutentags'
-    Plug 'ludovicchabant/vim-gutentags'
+    " Plug 'ludovicchabant/vim-gutentags'
 
     " let g:gutentags_trace = 1
     Plug 'tpope/vim-fugitive'
@@ -168,10 +167,9 @@ function! g:KSOO()
     set showmatch  
     set nowrap    
     set wmnu        
-    set noautochdir
     set noerrorbells visualbell t_vb=
     set hidden
-    set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<,space:#
+    " set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<,space:#
     set et 
 
     set ts=4
@@ -377,9 +375,6 @@ function! g:KSOO()
         "autocmd BufWritePost *.vimrc,*.vim source $MYVIMRC
     augroup END 
 
-    let &t_SI.="\e[5 q" 
-    let &t_SR.="\e[4 q" 
-    let &t_EI.="\e[1 q"
 
 
     hi Error		guifg=red		guibg=darkBlue	gui=underline ctermfg=red ctermbg=darkblue
