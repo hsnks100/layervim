@@ -127,7 +127,7 @@ function! g:KSOO()
 
     syntax on 
     "language en_US.UTF-8
-    set fileencodings=utf-8,cp949,utf-16le,euc-kr
+    set fileencodings=utf-8,cp949,euc-kr
     set encoding=utf-8 
 
     set langmenu=en_US
@@ -311,7 +311,7 @@ function! g:KSOO()
     set scrolloff=5
 
     " set background=light
-    colorscheme blue 
+    colorscheme gruvbox 
     " set background=dark
     if has("win32")
         runtime delmenu.vim
