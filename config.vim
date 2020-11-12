@@ -17,7 +17,6 @@ function! g:LoadPlugins()
     let g:mapleader="," 
     Plug 'vim-scripts/DoxygenToolkit.vim'
 
-    Plug 'neoclide/coc.nvim', {'branch': 'release'}
     " Plug 'hsnks100/vim-gutentags'
     Plug 'ludovicchabant/vim-gutentags'
 
