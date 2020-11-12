@@ -18,7 +18,7 @@ function! g:LoadPlugins()
     Plug 'vim-scripts/DoxygenToolkit.vim'
 
     " Plug 'hsnks100/vim-gutentags'
-    Plug 'ludovicchabant/vim-gutentags'
+    " Plug 'ludovicchabant/vim-gutentags'
 
     " let g:gutentags_trace = 1
     Plug 'tpope/vim-fugitive'
