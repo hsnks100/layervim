@@ -30,5 +30,24 @@ curl -s -L https://raw.githubusercontent.com/hsnks100/layervim/master/install-sc
 # final step
 execute vim, type ':PlugInstall[enter]'
 
+# shortcut
+
+```
+,w
+buffer window
+
+ctrl + h
+move to left window 
+
+ctrl + l
+move to right window
+
+,fed
+open config file
+
+,feR
+reload config file
+```
+
 
 
