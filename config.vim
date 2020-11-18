@@ -34,7 +34,7 @@ function! g:LoadPlugins()
     Plug 'vim-airline/vim-airline'
     Plug 'vim-airline/vim-airline-themes' 
     let g:airline_powerline_fonts = 1
-    let g:airline#extensions#tabline#enabled = 1
+    let g:airline#extensions#tabline#enabled = 0
 	let g:airline#extensions#tagbar#enabled = 1
 
 
@@ -112,14 +112,17 @@ function! g:LoadPlugins()
     Plug 'djoshea/vim-autoread'
     " Plug 'tpope/vim-sleuth'
     Plug 'vim-scripts/taglist.vim'
-    " Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+    Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
+    let g:go_version_warning = 0
+    let g:go_textobj_enabled = 0
+
     " let g:go_def_mapping_enabled = 0
     " let g:go_metalinter_enabled = ['vet', 'golint', 'errcheck']
     " let g:go_highlight_build_constraints = 1
     " let g:go_highlight_extra_types = 1
     " let g:go_highlight_fields = 1
-    " let g:go_highlight_functions = 1
-    " let g:go_highlight_methods = 1
+    let g:go_highlight_functions = 1
+    let g:go_highlight_methods = 1
     " let g:go_highlight_operators = 1
     " let g:go_highlight_structs = 1
     " let g:go_highlight_types = 1
