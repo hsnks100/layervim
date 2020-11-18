@@ -35,6 +35,9 @@ function! g:LoadPlugins()
     Plug 'vim-airline/vim-airline-themes' 
     let g:airline_powerline_fonts = 1
     let g:airline#extensions#tabline#enabled = 1
+	let g:airline#extensions#tagbar#enabled = 1
+
+
     " let g:airline#extensions#tabline#fnamemod = ':t'
     " let g:airline#extensions#tabline#left_sep = ' '
     " let g:airline#extensions#tabline#left_alt_sep = '|'
@@ -156,6 +159,7 @@ function! g:KSOO()
     set smartcase                                         
     set ignorecase 
     set hlsearch   
+    set autochdir
     set nocompatible 
     set bs=indent,eol,start 
     set history=1000   
@@ -235,8 +239,8 @@ function! g:KSOO()
 
     nnoremap <leader>sv :source $MYVIMRC<cr>
     "<CR>:copen<CR>
-    nnoremap gr :silent grep <C-R><C-W> * 
-    vnoremap gr "gy:silent grep <C-R>g *
+    nnoremap gr :silent vimgrep <C-R><C-W> **
+    vnoremap gr "gy:silent vimgrep <C-R>g *
     "nnoremap <Down> <C-w>j
     "nnoremap <Up> <C-w>k
     nnoremap <C-h> <C-W>h
@@ -247,10 +251,7 @@ function! g:KSOO()
     inoremap <C-l> <esc><C-W>l
     inoremap <C-j> <esc><C-W>j 
     inoremap <C-k> <esc><C-W>k 
-    nmap [ <C-U>
-    nmap ] <C-D>
-    vmap [ <C-U>
-    vmap ] <C-D>
+
 
 
     nnoremap <C-Left> <C-w><
@@ -379,6 +380,23 @@ function! g:KSOO()
 
     hi Error		guifg=red		guibg=darkBlue	gui=underline ctermfg=red ctermbg=darkblue
     au BufRead,BufNewFile *.go set filetype=go
+    au BufReadPost,BufNewFile * silent! unmap [%
+    au BufReadPost,BufNewFile * silent! unmap ]%
+    au BufReadPost,BufNewFile * silent! unmap ]]
+    au BufReadPost,BufNewFile * silent! unmap ][
+    au BufReadPost,BufNewFile * silent! unmap [[
+    au BufReadPost,BufNewFile * silent! unmap []
+    au BufReadPost,BufNewFile * silent! unmap ["
+    au BufReadPost,BufNewFile * silent! unmap ]"
+    au BufReadPost,BufNewFile * silent! nmap [ <C-U>
+    au BufReadPost,BufNewFile * silent! nmap ] <C-D>
+    au BufReadPost,BufNewFile * silent! vmap [ <C-U>
+    au BufReadPost,BufNewFile * silent! vmap ] <C-D>
+
+    
+    
+    
+    
 endfunction
 
 let g:no_plugin_maps = 1
