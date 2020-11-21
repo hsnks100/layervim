@@ -242,7 +242,7 @@ function! g:KSOO()
 
     nnoremap <leader>sv :source $MYVIMRC<cr>
     "<CR>:copen<CR>
-    nnoremap gr :silent vimgrep <C-R><C-W> **
+    nnoremap gr :silent grep -r <C-R><C-W> *
     vnoremap gr "gy:silent vimgrep <C-R>g *
     "nnoremap <Down> <C-w>j
     "nnoremap <Up> <C-w>k
