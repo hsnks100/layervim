@@ -23,6 +23,7 @@ function! g:LoadPlugins()
     " let g:gutentags_trace = 1
     Plug 'tpope/vim-fugitive'
     Plug 'scrooloose/nerdtree'
+    Plug 'vim-scripts/AutoComplPop'
     let g:NERDTreeSortOrder=['\.go$', '\.cpp$']
     map <F2> :NERDTree<CR> 
 
