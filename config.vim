@@ -101,6 +101,7 @@ function! g:LoadPlugins()
     "Plug 'edkolev/vim-amake'
     Plug 'vim-scripts/DoxygenToolkit.vim'
     " Track the engine.
+    Plug 'morhetz/gruvbox'
 
     Plug 'derekwyatt/vim-fswitch'
     command! A :call FSwitch('%', '') 
@@ -130,8 +131,11 @@ function! g:LoadPlugins()
     " let g:go_auto_sameids = 1
 endfunction
 function! g:KSOO()
-
     syntax on 
+    colorscheme gruvbox
+    set bg=dark
+    " highlight Normal ctermbg=black ctermfg=white
+
     "language en_US.UTF-8
     set fileencodings=utf-8,cp949,euc-kr
     set encoding=utf-8 
@@ -316,8 +320,6 @@ function! g:KSOO()
     set scrolloff=5
 
     " set background=light
-    colorscheme gruvbox 
-    " set background=dark
     if has("win32")
         runtime delmenu.vim
         runtime menu.vim
