@@ -88,7 +88,7 @@ function! g:LoadPlugins()
     Plug 'vim-scripts/jade.vim'
     " Plug 'wookiehangover/jshint.vim'
     Plug 'mattn/emmet-vim'
-    Plug 'benmills/vimux'
+    " Plug 'benmills/vimux'
     Plug 'jszakmeister/vim-togglecursor'
     Plug 'tpope/vim-surround'
     " Plug 'changyuheng/color-scheme-holokai-for-vim'
@@ -113,7 +113,7 @@ function! g:LoadPlugins()
     Plug 'djoshea/vim-autoread'
     " Plug 'tpope/vim-sleuth'
     Plug 'vim-scripts/taglist.vim'
-    Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
+    " Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
     let g:go_version_warning = 0
     let g:go_textobj_enabled = 0
 
