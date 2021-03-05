@@ -278,6 +278,8 @@ function! g:KSOO()
         tnoremap <Esc> <C-\><C-N> 
         tnoremap <C-h> <C-W>h
         tnoremap <C-l> <C-W>l
+	au BufEnter,TermOpen term://* AcpDisable
+    	au BufLeave term://* AcpEnable
     endif
 
     "compile setting
