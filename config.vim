@@ -34,7 +34,7 @@ function! g:LoadPlugins()
     Plug 'rakr/vim-one' 
     Plug 'vim-airline/vim-airline'
     Plug 'vim-airline/vim-airline-themes' 
-    let g:airline_powerline_fonts = 1
+    let g:airline_powerline_fonts = 0
     let g:airline#extensions#tabline#enabled = 0
 	let g:airline#extensions#tagbar#enabled = 1
 
@@ -107,8 +107,9 @@ function! g:LoadPlugins()
     command! A :call FSwitch('%', '') 
 
     Plug 'skywind3000/asyncrun.vim'
-    command! -bang -nargs=* -complete=file Make AsyncRun make -C ../build 
-    nnoremap <leader><leader><leader> :AsyncRun make -C build
+    Plug 'tpope/vim-dispatch'
+    " command! -bang -nargs=* -complete=file Make AsyncRun make -C ../build 
+    " nnoremap <leader><leader><leader> :AsyncRun make -C build
 
     " Plug 'vim-scripts/CycleColor'
     Plug 'djoshea/vim-autoread'
