@@ -108,6 +108,7 @@ function! g:LoadPlugins()
 
     Plug 'skywind3000/asyncrun.vim'
     Plug 'tpope/vim-dispatch'
+    au Filetype go set makeprg=go\ build
     " command! -bang -nargs=* -complete=file Make AsyncRun make -C ../build 
     " nnoremap <leader><leader><leader> :AsyncRun make -C build
 
@@ -130,6 +131,10 @@ function! g:LoadPlugins()
     " let g:go_highlight_structs = 1
     " let g:go_highlight_types = 1
     " let g:go_auto_sameids = 1
+
+    Plug 'jremmen/vim-ripgrep'
+    let g:rg_command = 'rg --vimgrep -S'
+
 endfunction
 function! g:KSOO()
     syntax on 
