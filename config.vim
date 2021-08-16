@@ -12,7 +12,6 @@ endfunction
 
 
 function! g:LoadPlugins()
-    Plug 'ustinmk/vim-syntax-extra'
     Plug 'posva/vim-vue'
     let g:mapleader="," 
     Plug 'vim-scripts/DoxygenToolkit.vim'
@@ -21,11 +20,11 @@ function! g:LoadPlugins()
     " Plug 'ludovicchabant/vim-gutentags'
 
     " let g:gutentags_trace = 1
-    Plug 'tpope/vim-fugitive'
     Plug 'scrooloose/nerdtree'
-    Plug 'vim-scripts/AutoComplPop'
     let g:NERDTreeSortOrder=['\.go$', '\.cpp$']
     map <F2> :NERDTree<CR> 
+    " Plug 'vim-scripts/AutoComplPop'
+
 
     " Plug 'ryanoasis/vim-webdevicons'
 
@@ -53,11 +52,8 @@ function! g:LoadPlugins()
     let g:miniBufExplMapWindowNavArrows = 1 
     let g:miniBufExplMapCTabSwitchBufs = 1 
     let g:miniBufExplModSelTarget = 1 
-
-    Plug 'junegunn/goyo.vim'
     let g:goyo_width = 200
     Plug 'rafi/awesome-vim-colorschemes'
-    Plug 'cocopon/pgmnt.vim'
 
 
     Plug 'easymotion/vim-easymotion'
@@ -73,20 +69,10 @@ function! g:LoadPlugins()
     Plug 'leafgarland/typescript-vim'
     Plug 'jelera/vim-javascript-syntax'
     Plug 'luochen1990/rainbow' 
-    Plug 'justinmk/vim-syntax-extra'
-    Plug 'tikhomirov/vim-glsl'
-    Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
     Plug 'tomtom/tcomment_vim' 
     nmap _ :TComment<CR>
     vmap _ :TComment<CR>
-    Plug 'jreybert/vimagit'
-    Plug 'vim-scripts/L9'
-    Plug 'vimplugin/project.vim'
     Plug 'mihaifm/bufstop'
-    " Plug 'lenny0702/vim-sftp-sync-inPython'
-    " Plug 'vim-scripts/LargeFile'
-    Plug 'vim-scripts/jade.vim'
-    " Plug 'wookiehangover/jshint.vim'
     Plug 'mattn/emmet-vim'
     " Plug 'benmills/vimux'
     Plug 'jszakmeister/vim-togglecursor'
@@ -116,26 +102,15 @@ function! g:LoadPlugins()
     Plug 'djoshea/vim-autoread'
     " Plug 'tpope/vim-sleuth'
     Plug 'vim-scripts/taglist.vim'
-    " Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
+    Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
     let g:go_version_warning = 0
     let g:go_textobj_enabled = 0
-
-    " let g:go_def_mapping_enabled = 0
-    " let g:go_metalinter_enabled = ['vet', 'golint', 'errcheck']
-    " let g:go_highlight_build_constraints = 1
-    " let g:go_highlight_extra_types = 1
-    " let g:go_highlight_fields = 1
-    let g:go_highlight_functions = 1
-    let g:go_highlight_methods = 1
-    " let g:go_highlight_operators = 1
-    " let g:go_highlight_structs = 1
-    " let g:go_highlight_types = 1
-    " let g:go_auto_sameids = 1
-
-    Plug 'jremmen/vim-ripgrep'
-    let g:rg_command = 'rg --vimgrep -S'
-
+    Plug 'Shougo/deoplete.nvim'
+    Plug 'deoplete-plugins/deoplete-go', {'do': 'make'}
+    let g:deoplete#enable_at_startup = 1
+    let g:deoplete#sources#go#gocode_binary = '/home/dire/go/bin/gocode'
 endfunction
+
 function! g:KSOO()
     syntax on 
     colorscheme gruvbox
@@ -159,6 +134,7 @@ function! g:KSOO()
     set laststatus=2                                      
 
     set autoread
+    set autoindent
     set cmdheight=2                                       
     set cursorline                                        
     set shortmess=atI                                     
@@ -299,18 +275,6 @@ function! g:KSOO()
 
     "function! Builder()
     "endfunction
-    command! -bang -nargs=? QFix call QFixToggle(<bang>0)
-    function! QFixToggle(forced)
-        if exists("g:qfix_win") && a:forced == 0
-            cclose
-            unlet g:qfix_win
-        else
-            copen 10
-            let g:qfix_win = bufnr("$")
-        endif
-    endfunction
-
-    nmap <silent> \` :QFix<CR> 
 
     if has("win32")
     else 
@@ -380,6 +344,7 @@ function! g:KSOO()
     nnoremap <leader>e :cs find e <C-R>=expand("<cword>")<CR><CR>    
     nnoremap <leader>f :cs find f <C-R>=expand("<cfile>")<CR><CR>    
     nnoremap <leader>g :cs find g <C-R>=expand("<cword>")<CR><CR>
+    nnoremap <c-s> :w<CR>
 
 
 
@@ -407,8 +372,19 @@ function! g:KSOO()
     au BufReadPost,BufNewFile * silent! vmap [ <C-U>
     au BufReadPost,BufNewFile * silent! vmap ] <C-D>
 
+    if &term =~ "xterm"
+        let &t_SI = "\<Esc>[6 q"
+        let &t_SR = "\<Esc>[3 q"
+        let &t_EI = "\<Esc>[2 q"
+    endif
+
     
     
+	autocmd BufEnter *.go  setlocal
+				\ tabstop=4 shiftwidth=4 softtabstop=4 textwidth=80 noexpandtab
+				\ cindent cinoptions=:0,l1,t0,g0,(0,W8
+				\ filetype=go
+                \ autoindent
     
     
 endfunction
